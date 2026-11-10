@@ -10,3 +10,8 @@ __pycache__/
 
 # Claude Code / OMC runtime state
 .omc/
+
+# mail-agent run outputs (contain mailbox data)
+2.1-mail-agent/classified_mails.json
+2.1-mail-agent/draft_replies.json
+2.1-mail-agent/logs/
