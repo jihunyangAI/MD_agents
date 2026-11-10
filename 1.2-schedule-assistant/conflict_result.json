@@ -1,0 +1,24 @@
+{
+  "status": "clear",
+  "checked_schedule": {
+    "title": "김민정씨와 영화 데이트",
+    "date": "2026-11-20",
+    "start_time": "13:30",
+    "end_time": "14:30"
+  },
+  "calendar_id": "primary",
+  "events_on_day": 0,
+  "conflicts": [],
+  "alternatives": [],
+  "selected_slot": {
+    "date": "2026-11-20",
+    "start_time": "13:30",
+    "end_time": "14:30",
+    "start_datetime": "2026-11-20T13:30:00+09:00",
+    "end_datetime": "2026-11-20T14:30:00+09:00"
+  },
+  "notes": [
+    "2026-11-20 00:00~24:00 (Asia/Seoul) primary 캘린더 조회 결과 일정 0건 (오전 10시로 잡아도 충돌 없음)"
+  ],
+  "checked_at": "2026-11-10T22:51:00+09:00"
+}

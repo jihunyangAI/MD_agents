@@ -1,0 +1,15 @@
+{
+  "check_interval": 180,
+  "max_emails": 20,
+  "urgent_keywords": ["긴급", "즉시", "오늘까지", "urgent", "ASAP", "deadline"],
+  "important_senders": ["jihunyang@naver.com"],
+  "skip_labels": ["Promotions", "Social", "Spam"],
+  "reply_language": "Korean",
+  "save_drafts": true,
+  "model": "claude-opus-5-5",
+  "telegram": {
+    "env_file": ".env.local",
+    "bot_token": "${TELEGRAM_BOT_TOKEN}",
+    "chat_id": "${TELEGRAM_CHAT_ID}"
+  }
+}

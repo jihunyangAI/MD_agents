@@ -1,0 +1,28 @@
+{
+  "status": "cancelled",
+  "conflict_status": "clear",
+  "selected_option": "original",
+  "event": {
+    "id": "m9tff25qvuhvkb2vvsds8ii2vs",
+    "title": "김민정씨와 영화 데이트",
+    "date": "2026-11-20",
+    "start_datetime": "2026-11-20T13:30:00+09:00",
+    "end_datetime": "2026-11-20T14:30:00+09:00",
+    "location": "강남CGV",
+    "html_link": "https://www.google.com/calendar/event?eid=bTl0ZmYyNXF2dWh2a2IydnZzZHM4aWkydnMgaGFwcHltYW4uamlodW5AbQ",
+    "attendees_added": [
+      "jihunyang@naver.com"
+    ]
+  },
+  "priority": "보통",
+  "assumptions": [
+    "충돌 없음(clear)이므로 원래 시간으로 바로 등록",
+    "시작 시간 13:30은 사용자 확인을 받아 확정",
+    "캘린더 자체 알림 메일은 끄고(notificationLevel: NONE) 초대 메일은 invite_sender에서 발송",
+    "Google Calendar가 Google Meet 링크(https://meet.google.com/ued-aijo-jop)를 자동으로 추가함",
+    "사용자 요청으로 2026-11-11 일정 삭제 (캘린더 취소 알림 메일은 보내지 않음)"
+  ],
+  "error": null,
+  "registered_at": "2026-11-10T22:50:19+09:00",
+  "cancelled_at": "2026-11-11T00:00:00+09:00"
+}

@@ -1,0 +1,34 @@
+{
+  "event": {
+    "title": "김민정씨와 영화 데이트",
+    "datetime": "2026-11-20 13:30 ~ 14:30",
+    "location": "강남CGV",
+    "html_link": "https://www.google.com/calendar/event?eid=bTl0ZmYyNXF2dWh2a2IydnZzZHM4aWkydnMgaGFwcHltYW4uamlodW5AbQ"
+  },
+  "subject": "[일정초대] 김민정씨와 영화 데이트",
+  "summary": {
+    "total": 1,
+    "sent": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "name": "김민정",
+      "email": "jihunyang@naver.com",
+      "email_source": "parsed",
+      "status": "sent",
+      "message_id": "1a1c5b98af3d3de0",
+      "reason": null
+    }
+  ],
+  "processed_at": "2026-11-10T22:51:00+09:00",
+  "cancellation": {
+    "subject": "[일정취소] 김민정씨와 영화 데이트",
+    "to": "jihunyang@naver.com",
+    "status": "sent",
+    "message_id": "1a1c60da59e9cc2b",
+    "thread_id": "1a1c5b98af3d3de0",
+    "sent_on": "2026-11-11"
+  }
+}

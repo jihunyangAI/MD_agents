@@ -1,0 +1,9 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# temp / backups
+tmp/
+*.bak
+__pycache__/

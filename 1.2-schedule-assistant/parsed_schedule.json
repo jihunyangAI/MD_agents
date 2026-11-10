@@ -1,0 +1,28 @@
+{
+  "input_text": "차주 금요일 오전 10시에 김민정씨랑 영화데이트. 강남CGV에서 1시30분PM만나기로 함 , 김민정씨 메일은 jihunyang@naver.com",
+  "reference_date": "2026-11-10",
+  "timezone": "Asia/Seoul",
+  "title": "김민정씨와 영화 데이트",
+  "date": "2026-11-20",
+  "start_time": "13:30",
+  "end_time": "14:30",
+  "start_datetime": "2026-11-20T13:30:00+09:00",
+  "end_datetime": "2026-11-20T14:30:00+09:00",
+  "location": "강남CGV",
+  "attendees": [
+    {
+      "name": "김민정",
+      "email": "jihunyang@naver.com",
+      "email_source": "input",
+      "note": "입력 문장에 이메일 명시"
+    }
+  ],
+  "priority": "보통",
+  "assumptions": [
+    "'차주 금요일'은 기준일 2026-11-10(화)이 속한 주의 다음 주 금요일(2026-11-20)로 해석",
+    "입력에 '오전 10시'와 '1시30분PM 만나기로 함'이 함께 있어, 강남CGV에서 실제로 만나는 시간인 13:30을 시작 시간으로 선택",
+    "종료 시간 미언급 → 시작 시간 + 1시간(14:30)",
+    "중요도 단서 없음 → '보통'"
+  ],
+  "parsed_at": "2026-11-10T22:50:00+09:00"
+}

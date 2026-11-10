@@ -1,0 +1,42 @@
+{
+  "workflow_name": "family-travel-workflow",
+  "description": "가족 여행 계획 자동 생성 및 예산 검증 워크플로",
+  "steps": [
+    {
+      "step": 1,
+      "name": "사용자 입력 및 파싱",
+      "action": "read_input",
+      "target_file": "travel_input.json",
+      "description": "여행지, 기간, 예산, 가족 구성원 및 아이 나이 등 입력 데이터 로드"
+    },
+    {
+      "step": 2,
+      "name": "여행 코스 생성 에이전트 실행",
+      "action": "run_travel_course_agent",
+      "target_file": "travel_course.json",
+      "description": "아이 동반 맞춤 일자별 관광지, 이동 시간, 가족친화적 식당 및 예상 비용 산출"
+    },
+    {
+      "step": 3,
+      "name": "숙소 추천 에이전트 실행",
+      "action": "run_accommodation_agent",
+      "target_file": "accommodation.json",
+      "description": "총예산의 40% 숙박비 예산 기준, 가족 구성 및 동선에 맞춘 3단계 숙소 옵션 추천"
+    },
+    {
+      "step": 4,
+      "name": "예산 검증 및 자동 조정",
+      "action": "run_budget_verification",
+      "target_file": "budget_summary.json",
+      "description": "관광/식비 + 숙박비 총합이 총예산을 초과하는지 검증하고 우선순위 규칙에 따라 자동 조정안 적용"
+    },
+    {
+      "step": 5,
+      "name": "최종 계획서 생성",
+      "action": "generate_final_plan",
+      "target_file": "travel_plan.md",
+      "description": "모든 JSON 데이터를 종합하여 상세 일정, 숙소 정보, 예산 요약표, 맞춤형 준비물 체크리스트가 포함된 마크다운 계획서 발행"
+    }
+  ],
+  "created_at": "2026-11-10 19:58:00"
+}
