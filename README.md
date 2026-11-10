@@ -51,4 +51,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\send_telegram.ps1 -M
 ## 보안 메모
 
 - `.env`, `.env.*` 파일은 `.gitignore`로 제외됩니다. 토큰·키는 커밋하지 마세요.
-- `classified_mails.json`, `draft_replies.json`, `logs/`는 실행 결과물로, 실행한 계정의 메일 제목·발신자가 담깁니다.
+- `classified_mails.json`, `draft_replies.json`, `logs/`는 실행할 때마다 생성되는 결과물로, 메일 제목·발신자가 담기므로 `.gitignore`로 제외됩니다.
