@@ -1,39 +1,81 @@
-# MD_agents
+<div align="center">
 
-Claude Code로 만든 **Markdown 기반 에이전트·워크플로우** 실습 모음입니다.
-각 실습 폴더의 `CLAUDE.md`가 작업 지침서 역할을 하며, 에이전트(`agents/*.md`)와 워크플로우(`workflows/*.md`)는
-YAML 프런트매터 + 본문 형식의 Markdown 파일로 정의되어 있습니다.
+# 🤖 MD_agents
 
-## 실습 목록
+**Claude Code로 만든 Markdown 기반 에이전트 · 워크플로우 실습 모음**
 
-| 폴더 | 내용 | 주요 산출물 |
-|------|------|-------------|
-| [`1.1-family-travel-planner`](1.1-family-travel-planner) | 가족 여행 정보(여행지·기간·예산·구성)를 입력하면 일자별 코스, 숙소 추천, 예산 검증, 최종 여행 계획서를 생성 | `family-travel-workflow.json`, `travel_plan.md`, `budget_summary.json` |
-| [`1.2-schedule-assistant`](1.2-schedule-assistant) | 자연어 일정 텍스트를 파싱해 캘린더 충돌을 확인하고 Google Calendar 등록·초대 메일까지 처리 | `agents/schedule-parser.md` 외 3개, `workflows/schedule-workflow.md` |
-| [`2.1-mail-agent`](2.1-mail-agent) | Gmail 미열람 메일을 긴급/중요/일반으로 분류하고 회신 초안을 Gmail 초안함에 저장, 결과를 텔레그램으로 알림 | `agents/mail-classifier.md`, `agents/reply-drafter.md`, `workflows/mail-workflow.md` |
-| [`2.2-file-sender`](2.2-file-sender) | 텔레그램으로 "기획서 보내줘"라고 보내면 PC에서 파일을 찾아 Gmail로 첨부 발송하고 결과를 텔레그램으로 알림 | `agents/command-parser.md` 외 2개, `commands/file-transfer.md`, `check_once.bat` |
-| [`2.3-news-monitor`](2.3-news-monitor) | 관심 키워드 뉴스 수집 → 업무 영향도 분석 → 채용공고 탐지 → 매일 오전 8시 텔레그램 데일리 브리핑 | `agents/news-collector.md` 외 3개, `workflows/news-workflow.md`, `newsletter_sender.py`, `run_schedule.bat` |
+에이전트도, 워크플로우도, 작업 지침도 전부 `.md` 파일 하나로 정의합니다.
 
-## 2.1 mail-agent 구조
+![Claude Code](https://img.shields.io/badge/Claude_Code-D97757?style=flat-square&logo=anthropic&logoColor=white)
+![Python](https://img.shields.io/badge/Python-stdlib_only-3776AB?style=flat-square&logo=python&logoColor=white)
+![Telegram](https://img.shields.io/badge/Telegram-Bot_API-26A5E4?style=flat-square&logo=telegram&logoColor=white)
+![Gmail](https://img.shields.io/badge/Gmail-EA4335?style=flat-square&logo=gmail&logoColor=white)
+![Windows](https://img.shields.io/badge/Task_Scheduler-0078D4?style=flat-square&logo=windows&logoColor=white)
+
+</div>
+
+---
+
+## 📚 목차
+
+- [이 저장소는?](#-이-저장소는)
+- [실습 목록](#-실습-목록)
+- [폴더 구조 규칙](#-폴더-구조-규칙)
+- [2.1 mail-agent](#-21-mail-agent--메일-분류--회신-초안)
+- [2.2 file-sender](#-22-file-sender--텔레그램으로-파일-요청)
+- [2.3 news-monitor](#-23-news-monitor--데일리-뉴스-브리핑)
+- [3.1 price-tracker](#-31-price-tracker--최저가-추적--알림)
+- [보안 메모](#-보안-메모)
+
+---
+
+## 💡 이 저장소는?
+
+각 실습 폴더의 **`CLAUDE.md`가 작업 지침서** 역할을 하고, 에이전트(`agents/*.md`)·워크플로우(`workflows/*.md`, `commands/*.md`)는
+**YAML 프런트매터 + 본문** 형식의 Markdown으로 정의되어 있습니다.
+판단이 필요한 일(분류·요약·검색)은 Claude가, 계산·발송처럼 정확해야 하는 일은 **Python 표준 라이브러리 스크립트**가 맡습니다.
+
+## 🗂 실습 목록
+
+| # | 폴더 | 한 줄 소개 | 핵심 산출물 |
+|:-:|------|-----------|-------------|
+| 1.1 | ✈️ [`family-travel-planner`](1.1-family-travel-planner) | 여행지·기간·예산·구성 → 일자별 코스, 숙소, 예산 검증, 최종 계획서 | `travel_plan.md`, `budget_summary.json` |
+| 1.2 | 📅 [`schedule-assistant`](1.2-schedule-assistant) | 자연어 일정 → 충돌 확인 → Google Calendar 등록 · 초대 메일 | `agents/schedule-parser.md` 외 3개 |
+| 2.1 | 📧 [`mail-agent`](2.1-mail-agent) | Gmail 미열람 메일 긴급/중요/일반 분류 + 회신 초안 + 텔레그램 요약 | `agents/mail-classifier.md`, `agents/reply-drafter.md` |
+| 2.2 | 📎 [`file-sender`](2.2-file-sender) | 텔레그램 "기획서 보내줘" → PC에서 파일 찾아 Gmail 첨부 발송 | `commands/file-transfer.md`, `check_once.bat` |
+| 2.3 | 📰 [`news-monitor`](2.3-news-monitor) | 키워드 뉴스 수집 → 영향도 분석 → 채용공고 → 매일 08:00 브리핑 | `workflows/news-workflow.md`, `newsletter_sender.py` |
+| 3.1 | 🛒 [`price-tracker`](3.1-price-tracker) | 관심 상품 최저가 수집 → 이력 기록 → 목표가 알림 → 추이 차트 | `commands/price-track-workflow.md`, `price_chart.html` |
+
+## 🧱 폴더 구조 규칙
 
 ```
-mail_config.json ─┐
-.env.local ───────┤   (텔레그램 토큰·chat_id — 저장소에 포함되지 않음)
-                  ▼
-[mail-classifier] → classified_mails.json
-        │              (키워드·발신자 규칙 + Claude 문맥 분석, 신뢰도 높은 쪽 채택)
-        ▼
-[reply-drafter]   → draft_replies.json + Gmail 초안함
-        │              (긴급=격식체 / 중요=정중체 / 일반=간략체, 발송은 하지 않음)
-        ▼
-[mail-workflow]   → 요약 통계 · 중요도별 목록 · 텔레그램 전송 · logs/daily_summary_YYYY-MM-DD.md
+<실습 폴더>/
+├── CLAUDE.md            # 작업 지침서 (클로드 코드가 자동으로 읽음)
+├── agents/*.md          # 에이전트 정의 (역할 · 입력 · 규칙 · 출력)
+├── workflows/*.md       # 또는 commands/*.md — 에이전트를 묶은 워크플로우
+├── *.py                 # 정확성이 필요한 단계 (표준 라이브러리만)
+├── run_schedule.bat     # 작업 스케줄러용 무인 실행 (claude -p)
+└── .env.example         # 필요한 환경변수 이름 (.env는 커밋 안 함)
 ```
 
-- 분류·초안 모델: Claude (`claude-opus-5-5`)
-- 텔레그램 전송: `scripts/send_telegram.ps1` (PowerShell `Invoke-RestMethod`, HTML·UTF-8, 실패 시 1회 재시도, `-DryRun` 지원)
-- 회신 메일은 **절대 자동 발송하지 않으며** 초안 저장까지만 수행합니다.
+---
 
-### 실행 준비
+## 📧 2.1 mail-agent — 메일 분류 · 회신 초안
+
+```mermaid
+flowchart LR
+    A[mail_config.json<br/>.env.local] --> B[mail-classifier]
+    B -->|classified_mails.json| C[reply-drafter]
+    C -->|Gmail 초안함| D[mail-workflow]
+    D --> E[📱 텔레그램 요약]
+```
+
+- 분류는 키워드·발신자 규칙 + Claude 문맥 분석 중 **신뢰도 높은 쪽**을 채택합니다.
+- 회신은 긴급=격식체 / 중요=정중체 / 일반=간략체로 쓰고, **자동 발송하지 않고 초안 저장까지만** 합니다.
+- 텔레그램 전송: `scripts/send_telegram.ps1` (HTML · UTF-8, 1회 재시도, `-DryRun` 지원)
+
+<details>
+<summary><b>⚙️ 실행 준비</b></summary>
 
 1. Claude Code에서 Gmail 커넥터를 연결합니다 (`/mcp`).
 2. `2.1-mail-agent/.env.local`을 만듭니다.
@@ -45,33 +87,33 @@ mail_config.json ─┐
 4. Claude Code에서 `workflows/mail-workflow.md 워크플로우를 실행해줘`라고 요청합니다.
 
 텔레그램 설정만 먼저 확인하려면:
-
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\send_telegram.ps1 -MessageFile tmp\msg.txt -DryRun
 ```
+</details>
 
-## 2.2 file-sender 구조
+---
 
-```
-텔레그램 "로또분석파일보내줘"
-        ▼
-[권한 확인]       authorized_users 외 사용자 → "권한이 없습니다."
-        ▼
-[command-parser]  file_query · recipient · date_hint · urgency 추출 (Claude)
-        ▼
-[file-finder]     scripts/file_finder.py — search_folders 안에서만, 확장자·크기 필터, 최신 파일 1개
-        │            없으면 → "파일을 찾지 못했습니다" 응답 후 종료
-        ▼
-[mail-sender]     scripts/mail_sender.py — smtplib + SMTP_SSL(465)로 첨부 발송, 1회 재시도,
-                     텔레그램 결과 알림, logs/transfer_log.json 기록
+## 📎 2.2 file-sender — 텔레그램으로 파일 요청
+
+```mermaid
+flowchart LR
+    A[📱 '로또분석파일보내줘'] --> B{권한 확인}
+    B -->|허용| C[command-parser]
+    B -->|거부| X[권한이 없습니다]
+    C --> D[file-finder]
+    D -->|파일 없음| Y[찾지 못했습니다]
+    D --> E[mail-sender]
+    E --> F[📧 Gmail 첨부 발송<br/>📱 결과 알림]
 ```
 
 - 슬래시 명령: `commands/file-transfer.md`(1건 처리), `commands/telegram-listener.md`(5초 간격 상시 대기)
-- 실행: `check_once.bat`(새 메시지가 있을 때만 Claude 실행 — 작업 스케줄러 주기 실행용), `run_listener.bat`(상시 대기)
+- 실행: `check_once.bat`(새 메시지가 있을 때만 Claude 실행), `run_listener.bat`(상시 대기)
 - 권한: bat은 `--permission-mode default` + `scripts/`의 스크립트 4개만 허용 (auto mode 오판 방지)
-- 외부 패키지 없이 Python 표준 라이브러리만 사용
+- 파일 검색은 `search_folders` 안에서만, 확장자·크기 필터 후 최신 1개 · SMTP_SSL(465) 발송
 
-### 실행 준비
+<details>
+<summary><b>⚙️ 실행 준비</b></summary>
 
 1. `sender_config.example.json`을 `sender_config.json`으로 복사하고 `search_folders`, `default_recipient` 등을 수정합니다.
 2. `2.2-file-sender/.env`를 만듭니다. (Gmail은 2단계 인증 후 앱 비밀번호 발급)
@@ -83,26 +125,34 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\send_telegram.ps1 -M
    ```
 3. 무인 실행 시 `claude setup-token`으로 장기 토큰을 발급해 `CLAUDE_CODE_OAUTH_TOKEN` 사용자 환경 변수로 저장합니다.
 4. `check_once.bat`을 작업 스케줄러에 등록하거나 `run_listener.bat`을 실행합니다.
+</details>
 
-## 2.3 news-monitor 구조
+---
 
+## 📰 2.3 news-monitor — 데일리 뉴스 브리핑
+
+```mermaid
+flowchart LR
+    A[monitor_config.json] --> B[news-collector]
+    B -->|collected_news.json| C[impact-analyzer]
+    C -->|analyzed_news.json| D[job-collector]
+    D -->|collected_jobs.json| E[newsletter-sender]
+    E --> F[📱 매일 08:00 브리핑]
+    B -. 실패 시 .-> G[(cache/ 전날 수집본)]
 ```
-monitor_config.json (키워드·필터·텔레그램 환경변수 이름)
-        ▼
-[news-collector]    → collected_news.json   최근 24시간, 키워드당 5건, 제목 유사도 80% 중복 제거
-        ▼                                     (실패 시 cache/의 전날 수집본 사용)
-[impact-analyzer]   → analyzed_news.json    영향도 높음/보통/낮음 + 30자 요약 + 실무 시사점 (Claude)
-        ▼
-[job-collector]     → collected_jobs.json   사람인·원티드·링크드인·잡플래닛, 48시간·경력·지역·제외 키워드 필터
-        ▼
-[newsletter-sender] → 텔레그램 데일리 브리핑 (MarkdownV2, 4000자 초과 시 분할, 실패 시 3분 후 1회 재시도)
-```
 
-- 수동 실행: Claude Code에서 `지금 브리핑 보내줘`
-- 자동 실행: `run_schedule.bat`을 작업 스케줄러에 매일 08:00로 등록. 1~3단계는 `claude -p`(허용 도구 목록 지정), 발송은 `python newsletter_sender.py`가 맡습니다.
-- 발송 스크립트는 Python 표준 라이브러리만 사용하며, `--dry-run`으로 메시지를 미리 볼 수 있습니다.
+| 단계 | 하는 일 |
+|------|---------|
+| news-collector | 최근 24시간, 키워드당 5건, 제목 유사도 80% 중복 제거 |
+| impact-analyzer | 영향도 높음/보통/낮음 + 30자 요약 + 실무 시사점 (Claude) |
+| job-collector | 사람인·원티드·링크드인·잡플래닛, 48시간·경력·지역·제외 키워드 필터 |
+| newsletter-sender | MarkdownV2, 4000자 초과 시 분할, 실패 시 3분 후 1회 재시도 |
 
-### 실행 준비
+- 수동 실행: Claude Code에서 **`지금 브리핑 보내줘`**
+- 자동 실행: `run_schedule.bat` — 1~3단계는 `claude -p`, 발송은 `python newsletter_sender.py` (`--dry-run` 지원)
+
+<details>
+<summary><b>⚙️ 실행 준비</b></summary>
 
 1. `2.3-news-monitor/.env.example`을 `.env`로 복사하고 `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`를 채웁니다.
 2. `monitor_config.json`에서 뉴스 키워드, 채용 키워드, 경력·지역 필터를 조정합니다.
@@ -110,10 +160,60 @@ monitor_config.json (키워드·필터·텔레그램 환경변수 이름)
    ```powershell
    schtasks /create /tn NewsMonitorBriefing /tr '<폴더 경로>\run_schedule.bat' /sc daily /st 08:00 /f
    ```
+</details>
 
-## 보안 메모
+---
 
-- `.env`, `.env.*` 파일은 `.gitignore`로 제외됩니다. 토큰·키는 커밋하지 마세요.
-- `classified_mails.json`, `draft_replies.json`, `logs/`는 실행할 때마다 생성되는 결과물로, 메일 제목·발신자가 담기므로 `.gitignore`로 제외됩니다.
-- 2.2의 `sender_config.json`(개인 메일 주소)과 `logs/`(전송 기록)는 `2.2-file-sender/.gitignore`로 제외됩니다.
-- 2.3의 `newsletter_log.json`(텔레그램 발송 이력), `logs/`, `cache/`는 `2.3-news-monitor/.gitignore`로 제외됩니다. 커밋된 `collected_*.json`, `analyzed_news.json`은 공개 뉴스·채용공고 예시 결과입니다.
+## 🛒 3.1 price-tracker — 최저가 추적 · 알림
+
+```mermaid
+flowchart LR
+    W[watchlist.json<br/>상품 · 모델 · 목표가] --> S[price-scraper<br/>웹 검색]
+    S -->|scraped_prices.json| R[price-recorder]
+    R -->|prices.csv<br/>price_stats.json| A[price-alert]
+    R --> C[price-chart]
+    A --> T[📱 텔레그램 알림]
+    C --> H[📊 price_chart.html]
+```
+
+| 에이전트 | 실행 | 하는 일 |
+|----------|------|---------|
+| `price-scraper` | Claude (웹 검색) | 지정 **모델 · 다나와 페이지** 기준 국내 신품 최저가 조회. 중고·액세서리·해외직구·카드 조건부 할인 제외, 예상가 50~200% 이상치 검사 |
+| `price-recorder` | `price_recorder.py` | `prices.csv` 누적(전일대비 변동, 중복 방지) + 역대 최저/최고/평균, 목표가까지 남은 금액, 7일 추세 |
+| `price-alert` | `price_alert.py` | 목표가 달성 → `[최저가알림]`, 직전 대비 10%↓ → `[가격하락]` 텔레그램 발송 (`urllib`, `--dry-run`) |
+| `price-chart` | `price_chart.py` | 요약 카드 + 상품별 선 그래프(목표가 빨간 점선, 최저가 ★) + 최근 변동 10건. **외부 라이브러리 없는 순수 HTML/CSS/JS(SVG)** |
+
+- 실행: Claude Code에서 **`지금 가격확인해줘`** 또는 **`/price-track-workflow`**
+- 자동 실행: `run_schedule.bat` — ①은 `claude -p`, ②~⑤는 Python 스크립트 (`--check`로 설정 점검)
+- 완료 메시지: `수집완료 - [YYYY-MM-DD HH:MM] / 추적 중 상품 N개`
+- 네이버 개발자센터 사용 API 목록에 검색 API가 없어(2026-11 기준), API 키 없이 **웹 검색 방식**으로 수집합니다.
+
+> [!TIP]
+> `watchlist.json`에는 상품마다 **정확한 `model`과 다나와 `url`**을 적어 두세요.
+> 이름만 있으면("다이슨 에어랩") 수집 때마다 다른 라인업이 잡혀 이력이 섞이고 잘못된 알림이 갈 수 있습니다.
+
+<details>
+<summary><b>⚙️ 실행 준비</b></summary>
+
+1. `3.1-price-tracker/.env.example`을 `.env`로 복사하고 `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`를 채웁니다.
+2. `watchlist.json`에 상품(`name`, `model`, `url`, `expected_price`, `target_price`, `active`)을 등록합니다.
+3. 알림 미리보기: `python price_alert.py --dry-run`
+4. 작업 스케줄러 등록 (예: 매일 16:45):
+   ```powershell
+   schtasks /create /tn PriceTracker-Daily /tr '<폴더 경로>\run_schedule.bat' /sc daily /st 16:45 /f
+   ```
+</details>
+
+---
+
+## 🔒 보안 메모
+
+| 대상 | 처리 |
+|------|------|
+| `.env`, `.env.*` (토큰 · 키 · chat_id) | 루트 `.gitignore`로 제외 — `.env.example`만 커밋 |
+| 2.1 `classified_mails.json`, `draft_replies.json`, `logs/` | 메일 제목·발신자가 담겨 제외 |
+| 2.2 `sender_config.json`(개인 메일 주소), `logs/` | `2.2-file-sender/.gitignore`로 제외 |
+| 2.3 `newsletter_log.json`, `logs/`, `cache/` | `2.3-news-monitor/.gitignore`로 제외 |
+| 3.1 `alert_history.json`(텔레그램 발송 이력), `logs/` | `3.1-price-tracker/.gitignore`로 제외 |
+
+커밋된 `collected_*.json`, `analyzed_news.json`, `scraped_prices.json`, `prices.csv`, `price_chart.html`은 공개 뉴스·채용공고·쇼핑 가격으로 만든 **예시 결과**입니다.

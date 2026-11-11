@@ -1,0 +1,37 @@
+{
+  "collected_at": "2026-11-12T03:30:24+09:00",
+  "method": "web_search",
+  "summary": {
+    "total": 2,
+    "success": 1,
+    "failed": 1
+  },
+  "results": [
+    {
+      "id": "prd-001",
+      "name": "애플 에어팟 4세대",
+      "success": true,
+      "price": 150090,
+      "source": "리온테크 (다나와 최저가)",
+      "source_url": "https://prod.danawa.com/info?pcode=65920016",
+      "matched_title": "APPLE 에어팟4 MXP63KH/A (정품)",
+      "discount_info": "출시가 199,000원 대비 약 25% 할인",
+      "stock_status": "재고있음",
+      "error": null,
+      "error_message": null
+    },
+    {
+      "id": "prd-002",
+      "name": "다이슨 에어랩",
+      "success": false,
+      "price": null,
+      "source": "다나와 최저가 (판매점 185개)",
+      "source_url": "https://prod.danawa.com/info?pcode=92187071",
+      "matched_title": "다이슨 에어랩 i.d. 멀티 스타일러 앤 드라이어 (세라믹핑크/로즈골드)",
+      "discount_info": null,
+      "stock_status": null,
+      "error": "MODEL_NOT_FOUND",
+      "error_message": "다른 모델(에어랩 i.d. 멀티 스타일러, 489,600원)을 수집함 - 추적 모델(스타일러 컴플리트)과 달라 무효 처리"
+    }
+  ]
+}

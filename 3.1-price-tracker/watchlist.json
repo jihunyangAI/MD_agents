@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "currency": "KRW",
+  "updated_at": "2026-11-12",
+  "products": [
+    {
+      "id": "prd-001",
+      "name": "애플 에어팟 4세대",
+      "model": "APPLE 에어팟4 MXP63KH/A (정품, 일반형)",
+      "url": "https://prod.danawa.com/info/?pcode=65920016",
+      "expected_price": 200000,
+      "target_price": 180000,
+      "registered_at": "2026-11-12",
+      "active": true
+    },
+    {
+      "id": "prd-002",
+      "name": "다이슨 에어랩",
+      "model": "다이슨 에어랩 스타일러 컴플리트 (푸시아/니켈)",
+      "url": "https://prod.danawa.com/info/?pcode=6517468",
+      "expected_price": 650000,
+      "target_price": 550000,
+      "registered_at": "2026-11-12",
+      "active": true
+    }
+  ]
+}

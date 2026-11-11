@@ -1,0 +1,8 @@
+commands/price-track-workflow.md의 ① price-scraper 단계만 실행해줘.
+- agents/price-scraper.md의 규칙을 그대로 따른다.
+- 먼저 python으로 현재 시각을 확인해 collected_at에 쓴다(추측 금지).
+- watchlist.json의 active: true 상품만 웹 검색으로 국내 신품 최저가를 찾아 scraped_prices.json에 덮어쓴다.
+- 실패한 상품은 price: null, error, error_message를 채운다.
+- ②~⑤(price_recorder.py, price_alert.py, price_chart.py 실행과 완료 메시지)는 하지 마. 배치 파일이 따로 실행한다.
+- 확인 질문 없이 끝까지 진행해.
+- .env 파일은 읽지 마.

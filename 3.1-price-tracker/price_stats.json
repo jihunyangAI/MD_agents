@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-11-12T03:33:42+09:00",
+  "products": [
+    {
+      "id": "prd-001",
+      "name": "애플 에어팟 4세대",
+      "count": 3,
+      "latest": 150090,
+      "latest_at": "2026-11-12 03:30",
+      "previous": 156890,
+      "change_from_previous": -6800,
+      "all_time_low": 150090,
+      "all_time_low_at": "2026-11-12 03:30",
+      "all_time_high": 156890,
+      "all_time_high_at": "2026-11-12 02:45",
+      "average": 154623,
+      "target": 180000,
+      "remaining_to_target": 0,
+      "target_reached": true,
+      "trend_7d": "하락",
+      "trend_7d_change": -6800,
+      "trend_7d_samples": 3
+    },
+    {
+      "id": "prd-002",
+      "name": "다이슨 에어랩",
+      "count": 2,
+      "latest": 644950,
+      "latest_at": "2026-11-12 03:24",
+      "previous": 649990,
+      "change_from_previous": -5040,
+      "all_time_low": 644950,
+      "all_time_low_at": "2026-11-12 03:24",
+      "all_time_high": 649990,
+      "all_time_high_at": "2026-11-12 02:45",
+      "average": 647470,
+      "target": 550000,
+      "remaining_to_target": 94950,
+      "target_reached": false,
+      "trend_7d": "하락",
+      "trend_7d_change": -5040,
+      "trend_7d_samples": 2
+    }
+  ]
+}

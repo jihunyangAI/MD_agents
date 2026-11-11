@@ -1,0 +1,9 @@
+# secrets (bot token, chat_id)
+.env
+
+# run outputs that hold personal send history / local logs
+alert_history.json
+logs/
+
+# python cache
+__pycache__/
