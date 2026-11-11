@@ -1,0 +1,5 @@
+# 실행 기록 (메일 주소·파일명·텔레그램 ID 포함)
+logs/
+
+# 개인 설정 (메일 주소 포함) — sender_config.example.json 을 복사해서 사용
+sender_config.json

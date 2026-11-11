@@ -1,0 +1,22 @@
+{
+  "search_folders": [
+    "C:/tmp/"
+  ],
+  "allowed_extensions": [
+    ".pdf",
+    ".docx",
+    ".xlsx",
+    ".pptx",
+    ".txt",
+    ".zip",
+    ".png",
+    ".jpg",
+    ".jpeg"
+  ],
+  "max_file_size_mb": 20,
+  "default_recipient": "me@example.com",
+  "authorized_users": [
+    "${TELEGRAM_CHAT_ID}"
+  ],
+  "search_depth": 3
+}
