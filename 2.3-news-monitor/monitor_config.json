@@ -1,0 +1,135 @@
+{
+  "version": "1.0",
+  "language": "ko",
+  "description": "관심 키워드 기반 뉴스 수집 + 업무 영향도 분석 + 채용 공고 탐지 → 텔레그램 아침 브리핑",
+
+  "news_keywords": [
+    { "id": "news-001", "keyword": "AI규제",           "enabled": true },
+    { "id": "news-002", "keyword": "LLM최신동향",      "enabled": true },
+    { "id": "news-003", "keyword": "클라우드보안",     "enabled": true },
+    { "id": "news-004", "keyword": "데이터프라이버시", "enabled": true },
+    { "id": "news-005", "keyword": "스타트업 투자",    "enabled": true }
+  ],
+
+  "news_collection": {
+    "id": "news-collection-001",
+    "enabled": true,
+    "period_hours": 24,
+    "max_per_keyword": 5,
+    "preferred_sources": [
+      { "id": "src-001", "name": "네이버뉴스",  "domains": ["news.naver.com", "n.news.naver.com"], "enabled": true },
+      { "id": "src-002", "name": "연합뉴스",    "domains": ["yna.co.kr"],      "enabled": true },
+      { "id": "src-003", "name": "ZDNet Korea", "domains": ["zdnet.co.kr"],    "enabled": true },
+      { "id": "src-004", "name": "블로터",      "domains": ["bloter.net"],     "enabled": true },
+      { "id": "src-005", "name": "테크크런치",  "domains": ["techcrunch.com"], "enabled": true },
+      { "id": "src-006", "name": "매일경제",    "domains": ["mk.co.kr"],       "enabled": true },
+      { "id": "src-007", "name": "한국경제",    "domains": ["hankyung.com"],   "enabled": true }
+    ],
+    "dedup_title_similarity": 0.8,
+    "summary_max_sentences": 3,
+    "retry_with_shortened_keyword": true,
+    "empty_result_message": "오늘은 관련 뉴스 없음",
+    "output_file": "collected_news.json"
+  },
+
+  "job_keywords": [
+    { "id": "job-001", "keyword": "AI엔지니어",         "enabled": true },
+    { "id": "job-002", "keyword": "프롬프트 엔지니어",  "enabled": true },
+    { "id": "job-003", "keyword": "데이터사이언티스트", "enabled": true }
+  ],
+
+  "job_filters": {
+    "id": "job-filter-001",
+    "enabled": true,
+    "experience": {
+      "id": "job-filter-exp",
+      "enabled": true,
+      "min_years": 3,
+      "max_years": 7
+    },
+    "locations": [
+      { "id": "loc-001", "name": "서울",     "enabled": true },
+      { "id": "loc-002", "name": "판교",     "enabled": true },
+      { "id": "loc-003", "name": "원격근무", "enabled": true }
+    ],
+    "exclude_keywords": [
+      { "id": "excl-001", "keyword": "인턴",     "enabled": true },
+      { "id": "excl-002", "keyword": "신입전용", "enabled": true }
+    ],
+    "platforms": [
+      { "id": "plat-001", "name": "사람인",   "domains": ["saramin.co.kr"],  "enabled": true },
+      { "id": "plat-002", "name": "원티드",   "domains": ["wanted.co.kr"],   "enabled": true },
+      { "id": "plat-003", "name": "링크드인", "domains": ["linkedin.com"],   "enabled": true },
+      { "id": "plat-004", "name": "잡플래닛", "domains": ["jobplanet.co.kr"], "enabled": true }
+    ],
+    "posted_within_hours": 48,
+    "dedup_key": ["company", "position"],
+    "max_qualifications": 3,
+    "max_preferred": 2,
+    "max_per_keyword": 5,
+    "output_file": "collected_jobs.json"
+  },
+
+  "impact_analysis": {
+    "id": "impact-001",
+    "enabled": true,
+    "provider": "claude",
+    "mode": "claude_code",
+    "levels": {
+      "높음": "즉시 대응 또는 검토가 필요한 변화 (규제 시행, 핵심 기술 출시, 경쟁사 주요 발표)",
+      "보통": "추후 참고 또는 팀 공유가 필요한 정보 (업계 트렌드, 연구 결과, 시장 변화)",
+      "낮음": "배경지식으로 알아두면 좋은 정보 (일반 현황, 통계 업데이트)"
+    },
+    "sort_order": ["높음", "보통", "낮음"],
+    "one_line_summary_max_chars": 30,
+    "implication_for_levels": ["높음"],
+    "input_file": "collected_news.json",
+    "output_file": "analyzed_news.json"
+  },
+
+  "telegram": {
+    "id": "telegram-001",
+    "enabled": true,
+    "env_file": ".env",
+    "bot_token_env": "TELEGRAM_BOT_TOKEN",
+    "chat_id_env": "TELEGRAM_CHAT_ID",
+    "max_message_length": 4000,
+    "split_if_exceeds": true,
+    "parse_mode": "MarkdownV2",
+    "use_emoji": true,
+    "retry_on_failure": 1,
+    "retry_delay_seconds": 180
+  },
+
+  "workflow": {
+    "id": "workflow-001",
+    "enabled": true,
+    "definition": "workflows/news-workflow.md",
+    "manual_trigger": "지금 브리핑 보내줘",
+    "steps": ["news-collector", "impact-analyzer", "job-collector", "newsletter-sender"],
+    "news_cache": {
+      "id": "news-cache-001",
+      "enabled": true,
+      "directory": "cache",
+      "file_pattern": "collected_news_YYYY-MM-DD.json",
+      "retention_days": 7
+    }
+  },
+
+  "schedule": {
+    "id": "schedule-001",
+    "enabled": true,
+    "frequency": "daily",
+    "time": "08:00",
+    "timezone": "Asia/Seoul",
+    "script": "run_schedule.bat"
+  },
+
+  "logging": {
+    "id": "logging-001",
+    "enabled": true,
+    "directory": "logs",
+    "file_pattern": "briefing_YYYY-MM-DD.md",
+    "retention_days": 30
+  }
+}

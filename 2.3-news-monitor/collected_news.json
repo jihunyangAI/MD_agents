@@ -1,0 +1,314 @@
+{
+  "collected_at": "2026-11-12T01:38:36+09:00",
+  "period_hours": 24,
+  "max_per_keyword": 5,
+  "dedup_title_similarity": 0.8,
+  "search_tool": "tavily_search (topic=news, time_range=day)",
+  "from_cache": false,
+  "summary": {
+    "keywords_total": 5,
+    "keywords_succeeded": 5,
+    "keywords_failed": 0,
+    "articles_total": 25,
+    "duplicates_removed": 4,
+    "out_of_period_removed": 0,
+    "duplicates_note": "difflib 0.8 기준 3건 + 동일 보도자료(제목 상이) 1건"
+  },
+  "results": [
+    {
+      "keyword_id": "news-001",
+      "keyword": "AI규제",
+      "status": "success",
+      "error": null,
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "news-001-01",
+          "title": "OpenAI, Anthropic face new oversight as New York's AI safety law takes effect",
+          "source": "테크크런치",
+          "published_at": "2026-11-11T05:52:00+09:00",
+          "published_at_verified": true,
+          "url": "https://techcrunch.com/2026/11/10/openai-anthropic-face-new-oversight-as-new-yorks-ai-safety-law-takes-effect/",
+          "summary": "뉴욕주가 프런티어 AI 개발사 등록 포털을 열었고, 오픈AI·앤트로픽 등은 2027년 1월 1일까지 등록해야 한다. RAISE법은 연매출 5억 달러 초과 개발사에 안전 프레임워크 공개, 중대 사고 72시간 내 보고, 모델 투명성 보고서 발행을 의무화한다. 캘리포니아 SB 53도 올해 1월부터 시행 중이다.",
+          "is_priority_source": true
+        },
+        {
+          "id": "news-001-02",
+          "title": "\"국제 안전기준 통과한 AI만 출시 허용하자\"[시대리포트]",
+          "source": "시대",
+          "published_at": "2026-11-11T05:40:00+09:00",
+          "published_at_verified": true,
+          "url": "https://www.sidae.com/article/2026100816575523030",
+          "summary": "1월 시행된 AI기본법은 사업자 의무 중심이어서 AI의 감정 설계나 훈련 지침 검증 문제는 직접 다루지 않는다는 지적이 나왔다. 최경진 한국인공지능법학회장은 국제 안전·신뢰성 기준을 통과한 AI만 출시하도록 하는 방안을 제시했다. 과기정통부는 '국가 AI 안전 생태계 조성 마스터플랜'을 연말까지 확정한다.",
+          "is_priority_source": false
+        },
+        {
+          "id": "news-001-03",
+          "title": "멜론 2위 AI 곡, 유튜브뮤직은 라벨 달고 국내 앱은 표시 기준 없어",
+          "source": "이슈인사이트",
+          "published_at": "2026-11-11T08:28:00+09:00",
+          "published_at_verified": true,
+          "url": "https://www.issueinsight.co.kr/news/articleView.html?idxno=3088",
+          "summary": "AI기본법은 생성형 AI 결과물 표시 의무를 AI 개발·제공 사업자에게만 부과해 개인 창작자와 음원 플랫폼은 대상이 아니다. EU AI Act 제50조는 합성 콘텐츠의 기계 판독 표시를 2026년 8월 2일부터 적용한다. 방미통위는 정보통신망법 개정을 12월까지 추진한다.",
+          "is_priority_source": false
+        },
+        {
+          "id": "news-001-04",
+          "title": "320여 개 규제특례 담은 초광역특구법 추진…AI·자율주행 규제도 완화",
+          "source": "궁시렁",
+          "published_at": "2026-11-11T12:00:00+09:00",
+          "published_at_verified": true,
+          "url": "https://www.gungsireong.com/news/articleView.html?idxno=55250",
+          "summary": "정부가 지방주도 성장을 위해 320여 개 규제특례를 담은 초광역특구법 제정을 추진한다. AI·자율주행·로봇·바이오 등 첨단산업 규제를 개선하는 내용이 포함됐다.",
+          "is_priority_source": false
+        },
+        {
+          "id": "news-001-05",
+          "title": "정부, 2030년 AI 유니콘 20곳·데카콘 1곳 육성…목표 달성 기업 '자동 지원' 체계 구축",
+          "source": "전자신문",
+          "published_at": "2026-11-11T14:09:00+09:00",
+          "published_at_verified": true,
+          "url": "https://www.etnews.com/20261111000307",
+          "summary": "중기부가 2030년까지 AI 유니콘을 6곳에서 20곳으로 늘리고 데카콘 1곳을 배출하겠다는 전략을 발표했다. 규제 분야에서는 8개 규제샌드박스에서 함께 실증하는 '공동 규제실증 프로젝트'를 도입한다. AI기본법 시행에 따른 영향평가와 신뢰성 검증 비용도 지원한다.",
+          "is_priority_source": false
+        }
+      ]
+    },
+    {
+      "keyword_id": "news-002",
+      "keyword": "LLM최신동향",
+      "status": "success",
+      "error": null,
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "news-002-01",
+          "title": "애플, 국내 중소 제조기업 AI 전환 지원…\"무료 교육·컨설팅\"",
+          "source": "매일경제",
+          "published_at": "2026-11-11T10:00:00+09:00",
+          "published_at_verified": true,
+          "url": "https://www.mk.co.kr/news/business/12205127",
+          "summary": "애플이 국내 중소 제조기업의 AI 전환을 위한 무료 교육·컨설팅을 제공한다. 머신러닝, 컴퓨터 비전, 대규모 언어모델(LLM)을 활용한 데이터 시스템 구축과 린 제조 방식 등을 다룬다.",
+          "is_priority_source": true
+        },
+        {
+          "id": "news-002-02",
+          "title": "ETF 줄줄이 나오는 앤트로픽, 괜찮을까",
+          "source": "매일경제",
+          "published_at": "2026-11-11T17:00:00+09:00",
+          "published_at_verified": true,
+          "url": "https://www.mk.co.kr/news/stock/12205634",
+          "summary": "LLM 선두 기업 앤트로픽이 18일 공모가를 확정하고 19일 나스닥에 상장할 예정이다(티커 ANT). 국내 운용사들은 글로벌 LLM 기업에 투자하는 ETF를 잇달아 내놓고 있다. 다만 스페이스X 상장 당시 고점 매수 논란을 의식해 편입 시점을 신중히 검토 중이다.",
+          "is_priority_source": true
+        },
+        {
+          "id": "news-002-03",
+          "title": "SK인텔릭스, 웰니스 로봇 '나무엑스' 런칭 1주년 고객 감사 이벤트",
+          "source": "매일경제",
+          "published_at": "2026-11-11T18:00:00+09:00",
+          "published_at_verified": true,
+          "url": "https://www.mk.co.kr/news/pick/12205679",
+          "summary": "SK인텔릭스가 웰니스 로봇 나무엑스 출시 1주년 이벤트를 진행한다. 회사는 LLM 기반 인지·판단 기술 경쟁력을 강화해 웰니스 서비스를 확대하겠다고 밝혔다.",
+          "is_priority_source": true
+        },
+        {
+          "id": "news-002-04",
+          "title": "Databricks' new AI agent tells CEO Ali Ghodsi the unvarnished truth",
+          "source": "테크크런치",
+          "published_at": "2026-11-12T00:00:00+09:00",
+          "published_at_verified": true,
+          "url": "https://techcrunch.com/2026/11/11/databricks-new-ai-agent-tells-ceo-ali-ghodsi-the-unvarnished-truth/",
+          "summary": "데이터브릭스가 장시간 다단계 작업을 수행하는 AI 에이전트 지니(Genie) 업데이트를 공개했다. 고객 데이터 기반 온톨로지로 맥락을 확보해 경영진이 맡긴 업무를 무감독으로 수행한다. 알리 고드시 CEO는 직원 만족도 조사 분석 등에 직접 활용하고 있다고 밝혔다.",
+          "is_priority_source": true
+        },
+        {
+          "id": "news-002-05",
+          "title": "OpenAI's quarterly revenue reportedly crosses $10B for the first time",
+          "source": "테크크런치",
+          "published_at": "2026-11-12T01:14:00+09:00",
+          "published_at_verified": true,
+          "url": "https://techcrunch.com/2026/11/11/openais-quarterly-revenue-reportedly-crosses-10b-for-the-first-time/",
+          "summary": "블룸버그에 따르면 오픈AI의 분기 매출이 처음으로 100억 달러를 넘었다. 2분기 67억 달러 대비 약 50% 증가한 수치다. 경쟁사 앤트로픽은 기업 시장을 선점하며 3분기 매출 170억 달러를 기록했다.",
+          "is_priority_source": true
+        }
+      ]
+    },
+    {
+      "keyword_id": "news-003",
+      "keyword": "클라우드보안",
+      "status": "success",
+      "error": null,
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "news-003-01",
+          "title": "KT, 카이스트에 자체 개발 AI 메일보안 서비스 공급",
+          "source": "연합뉴스",
+          "published_at": "2026-11-11T10:12:00+09:00",
+          "published_at_verified": true,
+          "url": "https://www.yna.co.kr/amp/view/AKR20261111059200017",
+          "summary": "KT가 KAIST 전 구성원에게 자체 개발 클라우드 기반 AI 메일보안 서비스를 제공한다. 스팸 차단, AI 위협 탐지, APT 정밀분석의 3단계 필터링으로 피싱 URL·악성파일을 탐지하며, 6월 CSAP 인증을 받았다. KT는 대학·정부출연연구기관으로 사업을 확대할 계획이다.",
+          "is_priority_source": true
+        },
+        {
+          "id": "news-003-02",
+          "title": "[임기범의 AI 혁신 스토리] 망분리 전면 해제, 무엇을 확인했나",
+          "source": "연합뉴스",
+          "published_at": "2026-11-11T11:25:00+09:00",
+          "published_at_verified": true,
+          "url": "https://www.yna.co.kr/amp/view/AKR20261111072500371",
+          "summary": "금융권 망분리 전면 해제를 앞두고 외부 프런티어 AI·클라우드에 소스코드 등을 제공할 때의 보안·집중 위험을 따져봐야 한다는 칼럼이다. 미국 클라우드법에 따라 해외 서버 데이터도 제공 요구 대상이 될 수 있다고 지적했다. 온프레미스 AI 등 대안과의 비교 검증이 필요하다고 강조했다.",
+          "is_priority_source": true
+        },
+        {
+          "id": "news-003-03",
+          "title": "[르포] GPU부터 보안·산업용 무선망까지…新 기술 뽐낸 시스코, 'AI 올라운더' 입증",
+          "source": "ZDNet Korea",
+          "published_at": "2026-11-11T13:12:00+09:00",
+          "published_at_verified": true,
+          "url": "https://zdnet.co.kr/view?no=20261111131053",
+          "summary": "시스코가 엔비디아와 협력한 '시큐어 AI 팩토리'와 네트워크·보안·데이터센터를 한 화면에서 관리하는 '시스코 클라우드 컨트롤'을 선보였다. AWS·애저 등 외부 저장소 데이터를 분석하는 데이터 패브릭 기술도 공개했다. 시스코는 에이전틱 AI가 기업 보안 전략을 바꾸고 있다고 밝혔다.",
+          "is_priority_source": true
+        },
+        {
+          "id": "news-003-04",
+          "title": "\"공격보다 느린 방어 위험…백업은 복원까지 시험해라\"",
+          "source": "ZDNet Korea",
+          "published_at": "2026-11-11T14:27:00+09:00",
+          "published_at_verified": true,
+          "url": "https://zdnet.co.kr/view?no=20261111114008",
+          "summary": "카라디 국장은 프런티어 AI 모델이 공격자의 보안 결함 탐색을 가속해 공격·방어 균형을 바꾸고 있다고 경고했다. 보안 설정·접근 통제·변경 불가능한 백업 등 기본을 지키고 AI 에이전트의 접근 범위와 도구 권한을 통제하라고 당부했다. 정부·기반시설 운영자·클라우드 업체 등이 함께하는 국가 사이버 방어 연합도 강조했다.",
+          "is_priority_source": true
+        },
+        {
+          "id": "news-003-05",
+          "title": "롯데이노베이트, 탈레스와 AI 보안 사업 확대…대외 시장 공략 속도",
+          "source": "ZDNet Korea",
+          "published_at": "2026-11-11T14:49:00+09:00",
+          "published_at_verified": true,
+          "url": "https://zdnet.co.kr/view?no=20261111144932",
+          "summary": "롯데이노베이트가 탈레스(임퍼바)의 웹 애플리케이션·API 보호(WAAP) 기술을 자사 보안관제 플랫폼과 연계한다. 이달 중 'AI 프리미엄 보안관제 서비스'를 출시해 신규 고객을 확보할 계획이다. AI·클라우드 환경 변화에 대응하는 보안 서비스를 강화한다.",
+          "is_priority_source": true
+        }
+      ]
+    },
+    {
+      "keyword_id": "news-004",
+      "keyword": "데이터프라이버시",
+      "status": "success",
+      "error": null,
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "news-004-01",
+          "title": "소비쿠폰 다 썼다고 소비 늘었을까…챗GPT로 정책 효과 연구",
+          "source": "연합뉴스",
+          "published_at": "2026-11-11T13:40:00+09:00",
+          "published_at_verified": true,
+          "url": "https://www.yna.co.kr/amp/view/AKR20261111092800017",
+          "summary": "난양공대 연구팀이 LLM으로 소비 지원금의 정책 효과를 예측하는 연구를 진행 중이다. 연구팀은 이용자 동의를 거친 비식별 데이터를 범주화·요약해 입력하며, API 입력 데이터가 학습에 재사용되지 않아 프라이버시 위험이 낮다고 밝혔다. 내년 3월까지 정책 대안 비교 연구를 마무리할 계획이다.",
+          "is_priority_source": true
+        },
+        {
+          "id": "news-004-02",
+          "title": "사이냅소프트, 문서뷰어에 AI 번역·민감정보 마스킹 기능 추가",
+          "source": "ZDNet Korea",
+          "published_at": "2026-11-11T17:13:00+09:00",
+          "published_at_verified": true,
+          "url": "https://zdnet.co.kr/view?no=20261111171256",
+          "summary": "사이냅소프트가 문서뷰어에 레이아웃을 유지하는 AI 번역과 민감정보 마스킹 기능을 추가했다. 고객사 자체 LLM과 연동해 내부 문서를 외부 AI로 보내지 않고 번역할 수 있다. 주민등록번호·전화번호·계좌번호 등을 규칙 기반으로 자동 마스킹한다.",
+          "is_priority_source": true
+        },
+        {
+          "id": "news-004-03",
+          "title": "다키클라우드, AI 활용 과정에서 확인해야 할 네 가지 데이터 통제 질문 제시",
+          "source": "코리아스프린트",
+          "published_at": "2026-11-11T13:00:00+09:00",
+          "published_at_verified": true,
+          "url": "https://www.koreasprint.com/news/articleView.html?idxno=22844",
+          "summary": "다키클라우드가 '내가 AI에 입력한 정보는 어디로 가는가'라는 질문을 기업 AI 환경의 데이터 주권·운영 통제 문제로 정리해 네 가지 점검 질문을 제시했다.",
+          "is_priority_source": false
+        },
+        {
+          "id": "news-004-04",
+          "title": "로이드케이, AI 보안 게이트웨이 'DO-GATE' 출시…외부 LLM 정보 유출 차단",
+          "source": "비석세스",
+          "published_at": "2026-11-11T14:00:00+09:00",
+          "published_at_verified": true,
+          "url": "https://besuccess.com?p=187937",
+          "summary": "로이드케이가 기업의 안전한 생성형 AI 활용을 지원하는 AI 보안 게이트웨이 'DO-GATE'를 출시했다. 외부 LLM 사용 과정에서의 정보 유출을 차단하는 것이 목적이다.",
+          "is_priority_source": false
+        },
+        {
+          "id": "news-004-05",
+          "title": "데이터만 현지에 두면 주권 확보? …키 관리·기밀 컴퓨팅 빠지면 '반쪽 주권'",
+          "source": "CIO Korea",
+          "published_at": "2026-11-11T17:00:00+09:00",
+          "published_at_verified": true,
+          "url": "https://www.cio.com/article/4247153/",
+          "summary": "데이터 주권은 저장 위치만으로 확보되지 않는다는 분석이다. 암호화, 격리, 검증 가능한 접근 통제가 있어야 기업이 데이터를 실질적으로 보호할 수 있다고 지적했다.",
+          "is_priority_source": false
+        }
+      ]
+    },
+    {
+      "keyword_id": "news-005",
+      "keyword": "스타트업 투자",
+      "status": "success",
+      "error": null,
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "news-005-01",
+          "title": "All 7 Anthropic founders will each cash out about $250M in IPO",
+          "source": "테크크런치",
+          "published_at": "2026-11-11T04:57:00+09:00",
+          "published_at_verified": true,
+          "url": "https://techcrunch.com/2026/11/10/all-7-anthropic-founders-will-each-cash-out-about-250m-in-ipo/",
+          "summary": "앤트로픽이 S-1 공시에서 공모가 범위를 주당 70~78달러로 제시했으며 기업가치는 최대 1.4조 달러로 거론된다. 공동창업자 7명은 중간값 기준 각각 약 2억5천만 달러어치 주식을 매도한다. 매도 후 각자 Class A 주식의 약 3.2%를 보유한다.",
+          "is_priority_source": true
+        },
+        {
+          "id": "news-005-02",
+          "title": "Proximal Ventures raises debut fund to back startups bringing AI to drug development",
+          "source": "테크크런치",
+          "published_at": "2026-11-11T05:47:00+09:00",
+          "published_at_verified": true,
+          "url": "https://techcrunch.com/2026/11/10/proximal-ventures-raises-debut-fund-to-back-startups-bringing-ai-to-drug-development/",
+          "summary": "전 SignalFire 투자자 사히르 라우프가 2,750만 달러 규모의 첫 단독 VC 펀드를 조성했다. Proximal Ventures는 신약 개발을 지원하는 도구·인프라·서비스를 AI로 혁신하는 스타트업에 투자한다.",
+          "is_priority_source": true
+        },
+        {
+          "id": "news-005-03",
+          "title": "한국에서도 데카콘이 탄생?...중기부 \"2030년까지 1곳 육성\"",
+          "source": "ZDNet Korea",
+          "published_at": "2026-11-11T17:08:00+09:00",
+          "published_at_verified": true,
+          "url": "https://zdnet.co.kr/view?no=20261111170820",
+          "summary": "중기부가 국가AI전략위와 함께 AI 유니콘 육성 컨트롤타워와 스타트업·대기업·투자자 연합체를 꾸린다. 성장단계별 차세대 유니콘 프로젝트와 국민성장펀드 등 AI 펀드를 공급하고, 반도체-클라우드-LLM-서비스 전 단계 통합 실증을 지원한다. 발표는 12일까지 열리는 딥테크 포럼 'DEEP DIVE INTO 2026'에서 이뤄졌다.",
+          "is_priority_source": true
+        },
+        {
+          "id": "news-005-04",
+          "title": "하드웨어 AI 플랫폼 노미널, 2억4천만 달러 투자유치…가치 30억 달러",
+          "source": "와우테일",
+          "published_at": "2026-11-11T04:54:00+09:00",
+          "published_at_verified": true,
+          "url": "https://wowtale.net/2026/11/11/267787",
+          "summary": "하드웨어 엔지니어링 플랫폼 노미널이 시리즈C로 2억4천만 달러를 유치하며 기업가치 30억 달러를 기록했다. 경쟁사 시프트는 3월 4,200만 달러 시리즈B를 유치했다.",
+          "is_priority_source": false
+        },
+        {
+          "id": "news-005-05",
+          "title": "AI 평가·후속학습 머코어, 7억5천만 달러 투자유치…가치 200억 달러",
+          "source": "와우테일",
+          "published_at": "2026-11-11T06:06:00+09:00",
+          "published_at_verified": true,
+          "url": "https://wowtale.net/2026/11/11/267802",
+          "summary": "머코어가 시리즈D로 7억5천만 달러를 유치해 기업가치 200억 달러를 인정받았다. 1년여 전 시리즈C 당시 100억 달러에서 두 배가 됐다. 기업 업무에 맞춘 AI 에이전트 평가 수요를 겨냥한다.",
+          "is_priority_source": false
+        }
+      ]
+    }
+  ]
+}

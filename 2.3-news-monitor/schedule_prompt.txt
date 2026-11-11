@@ -1,0 +1,7 @@
+workflows/news-workflow.md의 1단계(news-collector), 2단계(impact-analyzer), 3단계(job-collector)를 순서대로 실행하고, 4단계 중 upcoming_events.json 생성까지만 해줘.
+- 각 단계는 agents/ 폴더의 에이전트 정의 파일 규칙을 따른다.
+- 텔레그램 발송(newsletter_sender.py 실행)은 하지 마. 발송은 배치 파일이 따로 한다.
+- 확인 질문 없이 끝까지 진행해.
+- 뉴스 수집이 실패하면 cache 폴더의 가장 최근 캐시를 collected_news.json으로 복사하고 from_cache, cache_date를 표시해.
+- 수집에 성공하면 collected_news.json을 cache/collected_news_YYYY-MM-DD.json으로 저장해.
+- .env 파일은 읽지 마.

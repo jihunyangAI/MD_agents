@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-11-12T01:41:51+09:00",
+  "source_file": "collected_news.json",
+  "events": [
+    {
+      "date": "11/12(목)",
+      "event": "중기부 딥테크 포럼 DEEP DIVE INTO 2026 마지막 날",
+      "source_article": "news-005-03"
+    },
+    {
+      "date": "11/18(수)",
+      "event": "앤트로픽 IPO 공모가 확정 예정",
+      "source_article": "news-002-02"
+    },
+    {
+      "date": "11/19(목)",
+      "event": "앤트로픽 나스닥 상장 예정 (티커 ANT)",
+      "source_article": "news-002-02"
+    },
+    {
+      "date": "2027-01-01(금)",
+      "event": "뉴욕주 RAISE법 시행 - 프런티어 AI 개발사 등록 마감",
+      "source_article": "news-001-01"
+    }
+  ]
+}

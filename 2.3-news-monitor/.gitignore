@@ -1,0 +1,9 @@
+# 비밀 값 (토큰·chat_id)
+.env
+
+# 실행 기록 (내 텔레그램 채팅의 발송 이력·메시지 ID 포함)
+logs/
+newsletter_log.json
+
+# 실행할 때마다 다시 만드는 캐시
+cache/

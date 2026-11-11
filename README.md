@@ -12,6 +12,7 @@ YAML 프런트매터 + 본문 형식의 Markdown 파일로 정의되어 있습�
 | [`1.2-schedule-assistant`](1.2-schedule-assistant) | 자연어 일정 텍스트를 파싱해 캘린더 충돌을 확인하고 Google Calendar 등록·초대 메일까지 처리 | `agents/schedule-parser.md` 외 3개, `workflows/schedule-workflow.md` |
 | [`2.1-mail-agent`](2.1-mail-agent) | Gmail 미열람 메일을 긴급/중요/일반으로 분류하고 회신 초안을 Gmail 초안함에 저장, 결과를 텔레그램으로 알림 | `agents/mail-classifier.md`, `agents/reply-drafter.md`, `workflows/mail-workflow.md` |
 | [`2.2-file-sender`](2.2-file-sender) | 텔레그램으로 "기획서 보내줘"라고 보내면 PC에서 파일을 찾아 Gmail로 첨부 발송하고 결과를 텔레그램으로 알림 | `agents/command-parser.md` 외 2개, `commands/file-transfer.md`, `check_once.bat` |
+| [`2.3-news-monitor`](2.3-news-monitor) | 관심 키워드 뉴스 수집 → 업무 영향도 분석 → 채용공고 탐지 → 매일 오전 8시 텔레그램 데일리 브리핑 | `agents/news-collector.md` 외 3개, `workflows/news-workflow.md`, `newsletter_sender.py`, `run_schedule.bat` |
 
 ## 2.1 mail-agent 구조
 
@@ -83,8 +84,36 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\send_telegram.ps1 -M
 3. 무인 실행 시 `claude setup-token`으로 장기 토큰을 발급해 `CLAUDE_CODE_OAUTH_TOKEN` 사용자 환경 변수로 저장합니다.
 4. `check_once.bat`을 작업 스케줄러에 등록하거나 `run_listener.bat`을 실행합니다.
 
+## 2.3 news-monitor 구조
+
+```
+monitor_config.json (키워드·필터·텔레그램 환경변수 이름)
+        ▼
+[news-collector]    → collected_news.json   최근 24시간, 키워드당 5건, 제목 유사도 80% 중복 제거
+        ▼                                     (실패 시 cache/의 전날 수집본 사용)
+[impact-analyzer]   → analyzed_news.json    영향도 높음/보통/낮음 + 30자 요약 + 실무 시사점 (Claude)
+        ▼
+[job-collector]     → collected_jobs.json   사람인·원티드·링크드인·잡플래닛, 48시간·경력·지역·제외 키워드 필터
+        ▼
+[newsletter-sender] → 텔레그램 데일리 브리핑 (MarkdownV2, 4000자 초과 시 분할, 실패 시 3분 후 1회 재시도)
+```
+
+- 수동 실행: Claude Code에서 `지금 브리핑 보내줘`
+- 자동 실행: `run_schedule.bat`을 작업 스케줄러에 매일 08:00로 등록. 1~3단계는 `claude -p`(허용 도구 목록 지정), 발송은 `python newsletter_sender.py`가 맡습니다.
+- 발송 스크립트는 Python 표준 라이브러리만 사용하며, `--dry-run`으로 메시지를 미리 볼 수 있습니다.
+
+### 실행 준비
+
+1. `2.3-news-monitor/.env.example`을 `.env`로 복사하고 `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`를 채웁니다.
+2. `monitor_config.json`에서 뉴스 키워드, 채용 키워드, 경력·지역 필터를 조정합니다.
+3. 작업 스케줄러 등록 (PowerShell):
+   ```powershell
+   schtasks /create /tn NewsMonitorBriefing /tr '<폴더 경로>\run_schedule.bat' /sc daily /st 08:00 /f
+   ```
+
 ## 보안 메모
 
 - `.env`, `.env.*` 파일은 `.gitignore`로 제외됩니다. 토큰·키는 커밋하지 마세요.
 - `classified_mails.json`, `draft_replies.json`, `logs/`는 실행할 때마다 생성되는 결과물로, 메일 제목·발신자가 담기므로 `.gitignore`로 제외됩니다.
 - 2.2의 `sender_config.json`(개인 메일 주소)과 `logs/`(전송 기록)는 `2.2-file-sender/.gitignore`로 제외됩니다.
+- 2.3의 `newsletter_log.json`(텔레그램 발송 이력), `logs/`, `cache/`는 `2.3-news-monitor/.gitignore`로 제외됩니다. 커밋된 `collected_*.json`, `analyzed_news.json`은 공개 뉴스·채용공고 예시 결과입니다.

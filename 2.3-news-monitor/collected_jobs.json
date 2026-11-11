@@ -1,0 +1,327 @@
+{
+  "collected_at": "2026-11-12T01:41:28+09:00",
+  "filters": {
+    "posted_within_hours": 48,
+    "experience_years": [
+      3,
+      7
+    ],
+    "locations": [
+      "서울",
+      "판교",
+      "원격근무"
+    ],
+    "exclude_keywords": [
+      "인턴",
+      "신입전용"
+    ]
+  },
+  "summary": {
+    "keywords_total": 3,
+    "jobs_total": 1,
+    "needs_review_total": 10,
+    "excluded_total": 14,
+    "duplicates_removed": 2
+  },
+  "search_note": "tavily_search(플랫폼 도메인, start_date=2026-11-10) + tavily_extract(advanced). 잡플래닛·원티드는 원문에 등록일이 표시되지 않아 대부분 needs_review로 분류. 프롬프트 엔지니어·데이터사이언티스트는 완화 키워드로 1회 재검색함",
+  "results": [
+    {
+      "keyword_id": "job-001",
+      "keyword": "AI엔지니어",
+      "status": "success",
+      "error": null,
+      "job_count": 1,
+      "jobs": [
+        {
+          "id": "job-001-01",
+          "company": "(주)에이아이브이와이",
+          "position": "온디바이스 AI/임베디드 ML 엔지니어 (경량화·SLM·NPU)",
+          "experience": "경력무관(신입포함)",
+          "qualifications": [
+            "PyTorch·TensorFlow 기반 딥러닝 모델 개발/학습 경험",
+            "C/C++ 및 Python 프로그래밍 역량",
+            "ONNX·TensorRT·TFLite 모델 변환 및 경량화/최적화 경험"
+          ],
+          "preferred": [
+            "Edge NPU·Jetson 등 엣지/임베디드 기기 상용화 배포 경험",
+            "오픈소스 SLM 파인튜닝 및 온디바이스 서빙 경험"
+          ],
+          "location": "경기 성남시 수정구 금토로80번길 56 위든타워 (제2판교테크노밸리)",
+          "salary": null,
+          "deadline": "2026-12-11",
+          "url": "https://www.saramin.co.kr/zf_user/jobs/view?rec_idx=55545420",
+          "platform": "사람인",
+          "posted_at": "2026-11-11T14:00:00+09:00",
+          "note": "마감일은 공고의 D-29 표시(11/12 기준)로 환산. 등록 시각은 검색 결과 발행일 메타데이터 기준"
+        }
+      ],
+      "needs_review": [
+        {
+          "company": "(주)비투엔",
+          "position": "[경력] AI 엔지니어 업무 담당자",
+          "platform": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/jobs/view?rec_idx=55546223",
+          "experience": "데이터 관련 업무 경력 7년 이상 15년 이하",
+          "location": "서울 영등포구 선유로 146",
+          "deadline": "2026-12-11",
+          "salary": null,
+          "posted_at": null,
+          "unverified_fields": [
+            "posted_at"
+          ],
+          "note": "D-29 공고이나 원문에서 등록일 미표시. 경력 7~15년(3~7년과 7년에서 겹침). 자격: Python 상급, RAG(LangChain/LangGraph) AI Agent 개발, LLM/sLLM 파인튜닝·Vector DB 경험"
+        },
+        {
+          "company": "(주)애니파이브",
+          "position": "딥러닝 엔지니어 경력 채용",
+          "platform": "잡플래닛",
+          "url": "https://www.jobplanet.co.kr/job/search?posting_ids%5B%5D=1779038",
+          "experience": "경력무관",
+          "location": "서울 구로구 디지털로 288",
+          "deadline": "2026-11-26",
+          "salary": null,
+          "posted_at": null,
+          "unverified_fields": [
+            "posted_at"
+          ],
+          "note": "등록일 미표시"
+        },
+        {
+          "company": "하이브랩(주)",
+          "position": "AI 엔지니어 (5년차 이상)",
+          "platform": "잡플래닛",
+          "url": "https://www.jobplanet.co.kr/job/search?posting_ids%5B%5D=1770830",
+          "experience": "5년 이상",
+          "location": "경기",
+          "deadline": "2026-11-22",
+          "salary": null,
+          "posted_at": null,
+          "unverified_fields": [
+            "posted_at",
+            "location"
+          ],
+          "note": "근무지가 '경기'로만 표시돼 판교 여부 확인 불가"
+        },
+        {
+          "company": "(주)넥슨코리아",
+          "position": "[기술본부] AI 에이전트 플랫폼 엔지니어",
+          "platform": "잡플래닛",
+          "url": "https://www.jobplanet.co.kr/job/search?posting_ids%5B%5D=1816517",
+          "experience": "1년 이상",
+          "location": "경기",
+          "deadline": "2027-01-08",
+          "salary": null,
+          "posted_at": null,
+          "unverified_fields": [
+            "posted_at",
+            "location"
+          ],
+          "note": "근무지 '경기' 표시(판교 여부 원문 미확인)"
+        },
+        {
+          "company": "(주)당근마켓",
+          "position": "Software Engineer, Machine Learning - ML 인프라",
+          "platform": "잡플래닛",
+          "url": "https://www.jobplanet.co.kr/job/search?posting_ids%5B%5D=1769243",
+          "experience": "경력무관",
+          "location": "서울",
+          "deadline": "2026-12-22",
+          "salary": null,
+          "posted_at": null,
+          "unverified_fields": [
+            "posted_at"
+          ],
+          "note": "등록일 미표시"
+        },
+        {
+          "company": "(주)엘지에너지솔루션",
+          "position": "[CDO] AI/빅데이터 경력 상시 모집 - 비전AI기술개발",
+          "platform": "잡플래닛",
+          "url": "https://www.jobplanet.co.kr/job/search?posting_ids%5B%5D=1722119",
+          "experience": "경력무관",
+          "location": "서울",
+          "deadline": "2026-12-07",
+          "salary": null,
+          "posted_at": null,
+          "unverified_fields": [
+            "posted_at"
+          ],
+          "note": "상시 모집 공고, 등록일 미표시"
+        },
+        {
+          "company": "넥스트증권",
+          "position": "ML엔지니어(NLP·LLM)",
+          "platform": "링크드인",
+          "url": "https://ro.linkedin.com/jobs/view/ml%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4-nlp%C2%B7llm-at-next-securities-4489450172",
+          "experience": "4년 이상 ML 엔지니어 경력 (NLP/LLM 응용)",
+          "location": null,
+          "deadline": null,
+          "salary": null,
+          "posted_at": null,
+          "unverified_fields": [
+            "posted_at",
+            "location",
+            "deadline"
+          ],
+          "note": "링크드인 해외 미러 페이지로 근무지·등록일 확인 불가"
+        }
+      ],
+      "excluded": [
+        {
+          "company": "(주)원티드랩",
+          "position": "QA 엔지니어 [QA팀]",
+          "url": "https://www.wanted.co.kr/wd/397373",
+          "reason": "직무 부적합 (QA)"
+        },
+        {
+          "company": "(주)앤티에스",
+          "position": "백업 솔루션(NBU) 구축 및 기술지원 엔지니어",
+          "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=55546299",
+          "reason": "직무 부적합 (인프라 기술지원)"
+        },
+        {
+          "company": "다겸(주)",
+          "position": "기술지원 필드 엔지니어",
+          "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=55545680",
+          "reason": "직무 부적합 (기술지원)"
+        },
+        {
+          "company": "(주)웰컨",
+          "position": "솔루션 유지보수 엔지니어 (신입,경력)",
+          "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=55545767",
+          "reason": "직무 부적합 (유지보수)"
+        },
+        {
+          "company": "(주)씨엔지유니티",
+          "position": "실험실 엔지니어",
+          "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=55546793",
+          "reason": "직무 부적합 (실험실)"
+        },
+        {
+          "company": "디포커스(주)",
+          "position": "개발자/컨설턴트/영업 신입 및 경력 통합채용",
+          "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=55545295",
+          "reason": "직무 부적합 (통합채용·영업 포함)"
+        },
+        {
+          "company": "삼정산업기공(주)",
+          "position": "기계설계 및 열교환기·압력용기 경력 엔지니어",
+          "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=55546999",
+          "reason": "직무 부적합 (기계설계)"
+        },
+        {
+          "company": "(주)아울바이오",
+          "position": "무균주사제 신공장 건설 및 GMP 설비 엔지니어",
+          "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=55541251",
+          "reason": "직무 부적합 (설비)"
+        }
+      ]
+    },
+    {
+      "keyword_id": "job-002",
+      "keyword": "프롬프트 엔지니어",
+      "status": "empty",
+      "error": "오늘은 조건에 맞는 공고 없음",
+      "job_count": 0,
+      "jobs": [],
+      "needs_review": [
+        {
+          "company": "워프스페이스",
+          "position": "LLM Engineer",
+          "platform": "원티드",
+          "url": "https://www.wanted.co.kr/wd/397220",
+          "experience": "경력 1-10년",
+          "location": "서울 서초구 양재대로12길 56 (서울 AI 허브)",
+          "deadline": "상시채용",
+          "salary": null,
+          "posted_at": null,
+          "unverified_fields": [
+            "posted_at"
+          ],
+          "note": "시스템 프롬프트·컨텍스트 설계, LLM 평가 체계 구축 업무. 원티드 원문에 등록일 미표시"
+        }
+      ],
+      "excluded": [
+        {
+          "company": "똑똑플란트치과의원",
+          "position": "시니어 백엔드 개발자 (Java·Spring Boot·AWS)",
+          "url": "https://www.wanted.co.kr/wd/378259",
+          "reason": "직무 부적합 (백엔드, 프롬프트는 우대 역량일 뿐)"
+        },
+        {
+          "company": "(주)일레븐",
+          "position": "보안 엔지니어 (Security Engineer)",
+          "url": "https://www.wanted.co.kr/wd/395086",
+          "reason": "직무 부적합 (보안)"
+        },
+        {
+          "company": "원티드 긱스",
+          "position": "[여의도] 금융권 LLM 프롬프트 엔지니어 - Python (상주)",
+          "url": "https://www.wanted.co.kr/gigs/projects/14371",
+          "reason": "개별 채용공고 아님 (프리랜서 프로젝트 목록 페이지)"
+        }
+      ]
+    },
+    {
+      "keyword_id": "job-003",
+      "keyword": "데이터사이언티스트",
+      "status": "empty",
+      "error": "오늘은 조건에 맞는 공고 없음",
+      "job_count": 0,
+      "jobs": [],
+      "needs_review": [
+        {
+          "company": "업스테이지",
+          "position": "AI Model Production - Enterprise Data",
+          "platform": "원티드",
+          "url": "https://www.wanted.co.kr/wd/397565",
+          "experience": "경력 3년 이상",
+          "location": "서울 강남구 테헤란로7길 22",
+          "deadline": "상시채용",
+          "salary": null,
+          "posted_at": null,
+          "unverified_fields": [
+            "posted_at"
+          ],
+          "note": "데이터 분석·평가 데이터셋 설계 업무. 원티드 원문에 등록일 미표시"
+        },
+        {
+          "company": "(주)카카오",
+          "position": "Data Scientist (경력)",
+          "platform": "잡플래닛",
+          "url": "https://www.jobplanet.co.kr/companies/93880/job_postings.job_postings?page=2",
+          "experience": "경력무관",
+          "location": "경기",
+          "deadline": "2026-12-21",
+          "salary": null,
+          "posted_at": null,
+          "unverified_fields": [
+            "posted_at",
+            "location"
+          ],
+          "note": "기업 공고 목록에서 확인, 개별 공고 상세 미확인"
+        }
+      ],
+      "excluded": [
+        {
+          "company": "서울평가정보(주)",
+          "position": "개인신용정보 데이터사업팀 팀장",
+          "url": "https://www.jobplanet.co.kr/job/search?posting_ids%5B%5D=1748597",
+          "reason": "경력 범위 초과 (8년 이상)"
+        },
+        {
+          "company": "(주)너드소프트",
+          "position": "데이터 수집·정리 및 자동화 담당자 (계약직)",
+          "url": "https://www.jobplanet.co.kr/job/search?posting_ids%5B%5D=1752449",
+          "reason": "직무 부적합 (데이터 수집·정리 보조, 신입/1년 이상 계약직)"
+        },
+        {
+          "company": "한경에이셀",
+          "position": "데이터 플랫폼 엔지니어",
+          "url": "https://www.wanted.co.kr/wd/393334",
+          "reason": "직무 부적합 (데이터 엔지니어)"
+        }
+      ]
+    }
+  ]
+}
