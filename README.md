@@ -27,6 +27,7 @@
 - [3.1 price-tracker](#-31-price-tracker--최저가-추적--알림)
 - [3.2 news-stock-analyzer](#-32-news-stock-analyzer--뉴스-기반-주식-영향-분석)
 - [3.3 exchange-monitor](#-33-exchange-monitor--환율-모니터링--환전-타이밍-알림)
+- [3.4 realestate-monitor](#-34-realestate-monitor--부동산-미래-가치-평가--알림)
 - [보안 메모](#-보안-메모)
 
 ---
@@ -49,6 +50,7 @@
 | 3.1 | 🛒 [`price-tracker`](3.1-price-tracker) | 관심 상품 최저가 수집 → 이력 기록 → 목표가 알림 → 추이 차트 | `commands/price-track-workflow.md`, `price_chart.html` |
 | 3.2 | 📈 [`news-stock-analyzer`](3.2-news-stock-analyzer) | 해외 핫이슈 뉴스 TOP 5 → 강세/약세 종목 분석 → 리포트 → 텔레그램 | `commands/news-stock-workflow.md`, `daily_report.md` |
 | 3.3 | 💱 [`exchange-monitor`](3.3-exchange-monitor) | USD/JPY/EUR 원화 환율 매일 수집 → 목표가 도달·급변 시 텔레그램 환전 타이밍 알림 | `commands/exchange-workflow.md`, `rate_alert.py` |
+| 3.4 | 🏠 [`realestate-monitor`](3.4-realestate-monitor) | 아파트 실거래 수집 → 교통·학군·정책 분석 → 100점 미래 가치 점수 → 조건 충족 시 텔레그램 알림 | `commands/property-monitor.md`, `value_analyzer.py` |
 
 ## 🧱 폴더 구조 규칙
 
@@ -278,6 +280,47 @@ flowchart LR
 
 ---
 
+## 🏠 3.4 realestate-monitor — 부동산 미래 가치 평가 · 알림
+
+```mermaid
+flowchart LR
+    P[국토부 실거래가 API] --> C[price-collector]
+    W1[웹 검색] --> T[transport-analyzer]
+    N[나이스 API · 웹 검색] --> S[school-info-collector]
+    W2[국토부 · 서울시 · 뉴스] --> PM[policy-monitor]
+    C & T & S & PM --> V[value-analyzer]
+    V -->|value_report.json| A[telegram-alert]
+    A -->|점수 ≥ 기준 & 가격 ≤ 상한| TG[📱 텔레그램 알림]
+```
+
+| 에이전트 | 실행 | 하는 일 |
+|----------|------|---------|
+| `price-collector` | `price_collector.py` | data.go.kr 아파트 매매 실거래가 API로 관심 동의 최근 12개월 거래 수집(전용면적 필터), 단지별 최근 거래가 요약. 실패 시 1회 재시도 후 기존 데이터 유지 |
+| `transport-analyzer` | Claude (웹 검색) | 지하철 연장·GTX·도로·버스·트램 호재를 착공완료/계획확정/검토중으로 판정 → 0~30점 |
+| `school-info-collector` | Claude + 나이스 API | 주변 초·중·고 목록과 특목·자사고 진학률 → 0~20점 |
+| `policy-monitor` | Claude (웹 검색) | 재건축·재개발·용도지역·규제완화·토지거래허가 → -10~+20점 |
+| `value-analyzer` | `value_analyzer.py` | 같은 단지 12개월 평균(지역 상승률 보정) 대비 저렴한 정도 → 시세 0~30점, 합산 100점 + 참고 의견(적극매수/관망/보류) |
+| `telegram-alert` | `telegram_alert.py` | 기준 점수 이상·예산 이하 매물 알림. 같은 매물은 7일에 1회, 면책 문구 필수, `--dry-run` 미리보기 |
+
+- 실행: Claude Code에서 **`/property-monitor`** 또는 **`지금 매물 한번 분석해줘`**
+- 자동 실행: `run_schedule.bat` (실거래 수집 → 분석 → 알림, 교통·학군·정책은 최근 결과 재사용, 90일 지난 로그 삭제)
+- 매물 시세 API가 없어 **최근 실거래가를 매물가 대신** 사용합니다.
+- 결과는 참고용이며 투자 판단은 본인 책임입니다.
+
+<details>
+<summary><b>⚙️ 실행 준비</b></summary>
+
+1. data.go.kr에서 "국토교통부_아파트 매매 실거래가 자료" 활용신청, 나이스 교육정보 개방 포털에서 인증키 발급
+2. `.env.example`을 `.env`로 복사하고 API 키와 텔레그램 값을 채웁니다.
+3. `watch_config.json`에서 관심 지역·예산·면적·알림 기준 점수를 설정합니다.
+4. 작업 스케줄러 등록 (매일 17:40):
+   ```powershell
+   schtasks /create /tn RealEstateMonitor-Daily /tr '<폴더 경로>\run_schedule.bat' /sc daily /st 17:40 /f
+   ```
+</details>
+
+---
+
 ## 🔒 보안 메모
 
 | 대상 | 처리 |
@@ -289,5 +332,6 @@ flowchart LR
 | 3.1 `alert_history.json`(텔레그램 발송 이력), `logs/` | `3.1-price-tracker/.gitignore`로 제외 |
 | 3.2 `logs/`(텔레그램 발송 로그 · 스케줄 로그) | `3.2-news-stock-analyzer/.gitignore`로 제외 |
 | 3.3 `exchange_config.json`(토큰), `exchange_history.json`, `alert_state.json`, `logs/` | `3.3-exchange-monitor/.gitignore`로 제외 — `exchange_config.example.json`만 커밋 |
+| 3.4 `alert_state.json`(발송 이력), `price_data.json`, `value_report.json`, `logs/` | `3.4-realestate-monitor/.gitignore`로 제외 — `*_score.json`은 공개 자료 기반 예시 결과 |
 
 커밋된 `collected_*.json`, `analyzed_news.json`, `scraped_prices.json`, `prices.csv`, `price_chart.html`은 공개 뉴스·채용공고·쇼핑 가격으로 만든 **예시 결과**입니다.

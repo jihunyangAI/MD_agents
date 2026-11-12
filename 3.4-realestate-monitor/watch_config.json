@@ -1,0 +1,11 @@
+{
+  "target_areas": ["서울 마포구 공덕동", "서울 강서구 마곡동"],
+  "property_types": ["아파트"],
+  "max_price_억": 20,
+  "min_size_평": 25,
+  "alert_score_threshold": 55,
+  "check_interval_hours": 6,
+  "telegram_bot_token": "${TELEGRAM_BOT_TOKEN}",
+  "telegram_bot_chat_id": "${TELEGRAM_CHAT_ID}",
+  "telegram_alert": true
+}

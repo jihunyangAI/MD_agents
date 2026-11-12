@@ -1,0 +1,6 @@
+.env
+logs/
+alert_state.json
+price_data.json
+value_report.json
+yang.txt

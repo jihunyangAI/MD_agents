@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-11-12 KST",
+  "scale": "0-20",
+  "areas": [
+    {
+      "area": "서울 마포구 공덕동",
+      "score": 15,
+      "grade": "준수",
+      "summary": "마포구 중학교 평균 특목·자사고 진학률이 12.68%로 높은 편이고, 마포구 1위인 서울여중이 인접한 염리동에 있음",
+      "district_avg_special_hs_rate": 12.68,
+      "elementary": [
+        {"name": "서울공덕초등학교", "code": "7031114"},
+        {"name": "서울마포초등학교", "code": "7031123"},
+        {"name": "서울소의초등학교", "code": "7031139"},
+        {"name": "서울아현초등학교", "code": "7031145"},
+        {"name": "서울염리초등학교", "code": "7031154"},
+        {"name": "서울한서초등학교", "code": "7031166"}
+      ],
+      "middle": [
+        {"name": "서울여자중학교", "code": "7031191", "special_hs_rate": null, "vs_district": "마포구 1위"},
+        {"name": "아현중학교", "code": "7031202", "special_hs_rate": null, "vs_district": null},
+        {"name": "숭문중학교", "code": null, "special_hs_rate": null, "vs_district": null}
+      ],
+      "high_school_group": "서부학교군(마포·서대문·은평)",
+      "nearby_special": ["서울여자고등학교(자율고)", "서울디자인고등학교(특성화고)", "한세사이버보안고등학교(특성화고)"],
+      "assignment_basis": "주소 인접 추정 (schoolzone 미조회)",
+      "sources": [
+        "https://open.neis.go.kr/hub/schoolInfo",
+        "https://academy.prompie.com/schools/middle-school/list/by-region/city14/",
+        "https://academy.prompie.com/schools/middle-school/detail/epoebxu/"
+      ],
+      "note": "개별 중학교 진학률은 2차 출처에서 로그인해야 볼 수 있어 미확인. 구 평균과 구 1위 학교 근접성으로 판정 (2차 출처)"
+    },
+    {
+      "area": "서울 강서구 마곡동",
+      "score": 10,
+      "grade": "평균",
+      "summary": "강서구 평균 진학률이 5.28%이고, 마곡하늬중(6.34%)은 구 평균보다 높고 마곡중(4.23%)은 평균 수준. 신도시라 초등 통학과 학교 시설 여건은 양호",
+      "district_avg_special_hs_rate": 5.28,
+      "elementary": [
+        {"name": "서울공진초등학교", "code": "7081427"},
+        {"name": "서울공항초등학교", "code": "7081428"},
+        {"name": "서울가곡초등학교", "code": "7081418"}
+      ],
+      "middle": [
+        {"name": "마곡하늬중학교", "code": "7081540", "special_hs_rate": 6.34, "vs_district": "상위"},
+        {"name": "마곡중학교", "code": "7081515", "special_hs_rate": 4.23, "vs_district": "평균 이하"}
+      ],
+      "high_school_group": "남부학교군(강서·양천)",
+      "nearby_special": ["명덕외국어고등학교(특목고, 내발산동)", "덕원예술고등학교(특목고, 내발산동)"],
+      "assignment_basis": "주소 인접 추정 (schoolzone 미조회)",
+      "sources": [
+        "https://open.neis.go.kr/hub/schoolInfo",
+        "https://academy.prompie.com/schools/middle-school/list/by-region/city16/"
+      ],
+      "note": "진학률은 2차 출처(오늘학교 아카데미, 2026년) 기준. 학업성취 분포는 미확인이라 판정에서 빼고 정규화"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-11-12 KST",
+  "scale": "0-30",
+  "areas": [
+    {
+      "area": "서울 마포구 공덕동",
+      "score": 8,
+      "summary": "이미 4개 노선 환승 거점이지만, 신규 호재인 신안산선 서울역 연장(여의도~공덕~서울역)은 2026년 7월 사업자 제안이 철회돼 보류 상태",
+      "projects": [
+        {
+          "project": "신안산선 2단계 서울역 연장(여의도~서울역)",
+          "type": "지하철 연장",
+          "stage": "검토중",
+          "construction_start": null,
+          "opening_expected": null,
+          "nearest_station": "공덕역(정차 계획 미확정)",
+          "benefit_range": "공덕역 역세권(확정 시)",
+          "project_score": 8,
+          "sources": [
+            "https://news.mtn.co.kr/news-detail/2026072814280293997/share-modal"
+          ]
+        }
+      ],
+      "note": "강북횡단선은 공덕역 정차 여부가 확인되지 않아 점수에 반영하지 않음. 재확인(2026-11-12): 강북횡단선은 2026-07 공청회 이후에도 계획 단계, 서부선 예타 결과는 2026-12 예정(공덕 미경유)이라 변동 없음"
+    },
+    {
+      "area": "서울 강서구 마곡동",
+      "score": 23,
+      "summary": "대장홍대선이 2025년 12월 착공(2031년 말 개통 목표)했고 인접한 가양역(9호선)에서 환승. 강서로 교통개선(2026년 5월)으로 출근길 정체 완화",
+      "projects": [
+        {
+          "project": "대장홍대선(부천 대장~홍대입구 광역철도)",
+          "type": "지하철 연장",
+          "stage": "착공완료",
+          "construction_start": "2025-12",
+          "opening_expected": "2031-12",
+          "nearest_station": "가양역(9호선 환승, 마곡 인접)",
+          "benefit_range": "마곡 동측~가양역 일대 (마곡동에 직접 신설되는 역은 없음)",
+          "project_score": 22,
+          "sources": [
+            "https://m.go.seoul.co.kr/news/2025/12/10/20251210500050",
+            "https://news.mtn.co.kr/news-detail/2026081814510895844"
+          ]
+        },
+        {
+          "project": "강서로 교통개선(가양지하차도~양천향교역 교차로)",
+          "type": "도로교통",
+          "stage": "착공완료",
+          "construction_start": "2026-05",
+          "opening_expected": "2026-05",
+          "nearest_station": null,
+          "benefit_range": "마곡 출퇴근 차량 동선",
+          "project_score": 25,
+          "sources": [
+            "https://mediahub.seoul.go.kr/archives/2018222"
+          ]
+        }
+      ],
+      "note": "점수 = 대장홍대선 22점(착공완료 25점에서 2031년 말 개통으로 기간이 길고, 인접 역이라 3점 감점) + 추가 사업 1건 +1. 강서로 개선은 소규모 도로 개선이라 대표 사업에서 제외. GTX-D와 서부권 광역급행철도는 마곡을 지나지 않아 제외"
+    }
+  ]
+}
