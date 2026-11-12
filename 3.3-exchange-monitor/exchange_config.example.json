@@ -1,0 +1,35 @@
+{
+  "base_currency": "USD",
+  "targets": [
+    {
+      "currency": "KRW",
+      "display": "달러/원",
+      "alert_below": 1360,
+      "alert_above": 1480,
+      "tip_below": "달러매수 환전타이밍입니다.",
+      "tip_above": "달러보유시 매도 고려 타이밍입니다."
+    },
+    {
+      "currency": "JPY",
+      "display": "엔화/원",
+      "alert_below": 870,
+      "alert_above": 960,
+      "tip_below": "엔화매수 환전타이밍입니다.",
+      "tip_above": "엔화보유시 환전 고려 타이밍입니다."
+    },
+    {
+      "currency": "EUR",
+      "display": "유로/원",
+      "alert_below": 1480,
+      "alert_above": 1600,
+      "tip_below": "유로매수 환전타이밍입니다.",
+      "tip_above": "유로보유시 환전 고려 타이밍입니다."
+    }
+  ],
+  "change_alert_pct": 1.0,
+  "data_file": "exchange_history.json",
+  "telegram": {
+    "bot_token_env": "TELEGRAM_BOT_TOKEN",
+    "chat_id_env": "TELEGRAM_CHAT_ID"
+  }
+}

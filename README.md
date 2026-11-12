@@ -26,6 +26,7 @@
 - [2.3 news-monitor](#-23-news-monitor--데일리-뉴스-브리핑)
 - [3.1 price-tracker](#-31-price-tracker--최저가-추적--알림)
 - [3.2 news-stock-analyzer](#-32-news-stock-analyzer--뉴스-기반-주식-영향-분석)
+- [3.3 exchange-monitor](#-33-exchange-monitor--환율-모니터링--환전-타이밍-알림)
 - [보안 메모](#-보안-메모)
 
 ---
@@ -47,6 +48,7 @@
 | 2.3 | 📰 [`news-monitor`](2.3-news-monitor) | 키워드 뉴스 수집 → 영향도 분석 → 채용공고 → 매일 08:00 브리핑 | `workflows/news-workflow.md`, `newsletter_sender.py` |
 | 3.1 | 🛒 [`price-tracker`](3.1-price-tracker) | 관심 상품 최저가 수집 → 이력 기록 → 목표가 알림 → 추이 차트 | `commands/price-track-workflow.md`, `price_chart.html` |
 | 3.2 | 📈 [`news-stock-analyzer`](3.2-news-stock-analyzer) | 해외 핫이슈 뉴스 TOP 5 → 강세/약세 종목 분석 → 리포트 → 텔레그램 | `commands/news-stock-workflow.md`, `daily_report.md` |
+| 3.3 | 💱 [`exchange-monitor`](3.3-exchange-monitor) | USD/JPY/EUR 원화 환율 매일 수집 → 목표가 도달·급변 시 텔레그램 환전 타이밍 알림 | `commands/exchange-workflow.md`, `rate_alert.py` |
 
 ## 🧱 폴더 구조 규칙
 
@@ -245,6 +247,37 @@ flowchart LR
 
 ---
 
+## 💱 3.3 exchange-monitor — 환율 모니터링 · 환전 타이밍 알림
+
+```mermaid
+flowchart LR
+    A[open.er-api.com<br/>USD 기준] --> C[rate-collector]
+    C -->|exchange_history.json<br/>최근 30일| R[rate-alert]
+    R -->|목표가 도달 · 급변| T[📱 텔레그램 알림]
+```
+
+| 에이전트 | 실행 | 하는 일 |
+|----------|------|---------|
+| `rate-collector` | `rate_collector.py` | 무료 API(키 없음)에서 KRW·JPY·EUR 추출 → 달러/원, 100엔/원, 유로/원으로 변환. 같은 날은 덮어쓰고 최근 30일만 유지, 실패 시 1회 재시도 |
+| `rate-alert` | `rate_alert.py` | 조건 ① 목표가 도달(`alert_below` 이하 / `alert_above` 이상) ② 전일 대비 `change_alert_pct`% 이상 급변 → 메시지 1개로 묶어 발송. 같은 통화·조건은 24시간 내 1회, 실패 시 1회 재시도, `--force`로 중복 방지 무시 |
+
+- 실행: Claude Code에서 **`/exchange-workflow`** 또는 **`지금 바로 환율수집하고 알림조건을 확인해서 텔레그램 발송해줘.`**
+- 자동 실행: `run_schedule.bat` (수집 → 알림 → `환율확인완료` 출력, `logs/schedule_run.log` 기록)
+- 외부 라이브러리 없이 `urllib`만 사용합니다.
+
+<details>
+<summary><b>⚙️ 실행 준비</b></summary>
+
+1. `.env.example`을 `.env`로, `exchange_config.example.json`을 `exchange_config.json`으로 복사하고 텔레그램 값과 목표 환율을 채웁니다.
+2. 한 번 실행: `python rate_collector.py` → `python rate_alert.py`
+3. 작업 스케줄러 등록 (매일 09:00):
+   ```powershell
+   schtasks /create /tn ExchangeMonitor-Daily /tr '<폴더 경로>\run_schedule.bat' /sc daily /st 09:00 /f
+   ```
+</details>
+
+---
+
 ## 🔒 보안 메모
 
 | 대상 | 처리 |
@@ -255,5 +288,6 @@ flowchart LR
 | 2.3 `newsletter_log.json`, `logs/`, `cache/` | `2.3-news-monitor/.gitignore`로 제외 |
 | 3.1 `alert_history.json`(텔레그램 발송 이력), `logs/` | `3.1-price-tracker/.gitignore`로 제외 |
 | 3.2 `logs/`(텔레그램 발송 로그 · 스케줄 로그) | `3.2-news-stock-analyzer/.gitignore`로 제외 |
+| 3.3 `exchange_config.json`(토큰), `exchange_history.json`, `alert_state.json`, `logs/` | `3.3-exchange-monitor/.gitignore`로 제외 — `exchange_config.example.json`만 커밋 |
 
 커밋된 `collected_*.json`, `analyzed_news.json`, `scraped_prices.json`, `prices.csv`, `price_chart.html`은 공개 뉴스·채용공고·쇼핑 가격으로 만든 **예시 결과**입니다.

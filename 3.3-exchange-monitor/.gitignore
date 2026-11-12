@@ -1,0 +1,5 @@
+.env
+exchange_config.json
+exchange_history.json
+logs/
+alert_state.json
