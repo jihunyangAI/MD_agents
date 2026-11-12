@@ -1,0 +1,1665 @@
+{
+  "date": "2026-11-13",
+  "previous_date": null,
+  "has_previous": false,
+  "trending_rise_threshold": 3,
+  "overall_summary": "이번 주는 첫 실행이라 모든 키워드가 신규이며, Claude가 AI·LLM·개발자도구·테크 등 대부분의 분야에서 가장 많이 언급되었습니다. ChatGPT(지피티), Grok, GitHub, Claude Code 등 주요 AI 도구와 서비스 이름이 여러 분야에 걸쳐 함께 등장했습니다. 비교할 지난 주 데이터가 없어 추세 변화는 다음 주부터 확인할 수 있습니다.",
+  "topics": [
+    {
+      "topic": "AI",
+      "rising": [],
+      "up": [],
+      "down": [],
+      "new": [
+        {
+          "word": "Claude",
+          "rank": 1,
+          "count": 13,
+          "sources": [
+            "x",
+            "linkedin"
+          ]
+        },
+        {
+          "word": "ChatGPT",
+          "rank": 2,
+          "count": 10,
+          "sources": [
+            "x",
+            "linkedin"
+          ]
+        },
+        {
+          "word": "Gemini",
+          "rank": 3,
+          "count": 10,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Muse Ember",
+          "rank": 4,
+          "count": 7,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Astra",
+          "rank": 5,
+          "count": 6,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "CorelDRAW Go",
+          "rank": 6,
+          "count": 6,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Intangible",
+          "rank": 7,
+          "count": 6,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Fable 5.2",
+          "rank": 8,
+          "count": 5,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Grok",
+          "rank": 9,
+          "count": 5,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Rescale",
+          "rank": 10,
+          "count": 5,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Argon",
+          "rank": 11,
+          "count": 4,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Cisco Secure AI Factory",
+          "rank": 12,
+          "count": 4,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "DeepSeek",
+          "rank": 13,
+          "count": 4,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Harbor",
+          "rank": 14,
+          "count": 4,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "LifeClaw MCP",
+          "rank": 15,
+          "count": 4,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Mythos",
+          "rank": 16,
+          "count": 4,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Seedance 2.5",
+          "rank": 17,
+          "count": 4,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Creative Agent",
+          "rank": 18,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "OpenEvidence",
+          "rank": 19,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Viktor",
+          "rank": 20,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        }
+      ],
+      "top_keywords": [
+        {
+          "word": "Claude",
+          "rank": 1,
+          "count": 13,
+          "sources": [
+            "x",
+            "linkedin"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "ChatGPT",
+          "rank": 2,
+          "count": 10,
+          "sources": [
+            "x",
+            "linkedin"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Gemini",
+          "rank": 3,
+          "count": 10,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Muse Ember",
+          "rank": 4,
+          "count": 7,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Astra",
+          "rank": 5,
+          "count": 6,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "CorelDRAW Go",
+          "rank": 6,
+          "count": 6,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Intangible",
+          "rank": 7,
+          "count": 6,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Fable 5.2",
+          "rank": 8,
+          "count": 5,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Grok",
+          "rank": 9,
+          "count": 5,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Rescale",
+          "rank": 10,
+          "count": 5,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Argon",
+          "rank": 11,
+          "count": 4,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Cisco Secure AI Factory",
+          "rank": 12,
+          "count": 4,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "DeepSeek",
+          "rank": 13,
+          "count": 4,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Harbor",
+          "rank": 14,
+          "count": 4,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "LifeClaw MCP",
+          "rank": 15,
+          "count": 4,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Mythos",
+          "rank": 16,
+          "count": 4,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Seedance 2.5",
+          "rank": 17,
+          "count": 4,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Creative Agent",
+          "rank": 18,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "OpenEvidence",
+          "rank": 19,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Viktor",
+          "rank": 20,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        }
+      ],
+      "summary": "이번 주 AI 분야에서는 Claude(13회), ChatGPT(10회), Gemini(10회)가 상위권을 차지했고, Muse Ember, Astra, CorelDRAW Go, Intangible 등의 키워드도 함께 언급됐습니다."
+    },
+    {
+      "topic": "LLM",
+      "rising": [],
+      "up": [],
+      "down": [],
+      "new": [
+        {
+          "word": "Claude",
+          "rank": 1,
+          "count": 23,
+          "sources": [
+            "x",
+            "linkedin"
+          ]
+        },
+        {
+          "word": "LiteLLM",
+          "rank": 2,
+          "count": 15,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "ChatGPT",
+          "rank": 3,
+          "count": 11,
+          "sources": [
+            "x",
+            "linkedin"
+          ]
+        },
+        {
+          "word": "DeepEval",
+          "rank": 4,
+          "count": 10,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Mamba",
+          "rank": 5,
+          "count": 7,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Nemotron",
+          "rank": 6,
+          "count": 7,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Claude Code",
+          "rank": 7,
+          "count": 4,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Codex",
+          "rank": 8,
+          "count": 4,
+          "sources": [
+            "x",
+            "linkedin"
+          ]
+        },
+        {
+          "word": "GitHub",
+          "rank": 9,
+          "count": 4,
+          "sources": [
+            "linkedin"
+          ]
+        },
+        {
+          "word": "GPT",
+          "rank": 10,
+          "count": 4,
+          "sources": [
+            "linkedin"
+          ]
+        },
+        {
+          "word": "Muse Ember",
+          "rank": 11,
+          "count": 4,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Opus 5.5",
+          "rank": 12,
+          "count": 4,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Bittensor",
+          "rank": 13,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Cowork",
+          "rank": 14,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Google AI Mode",
+          "rank": 15,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Perplexity",
+          "rank": 16,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "RWKV",
+          "rank": 17,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "veriserve",
+          "rank": 18,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "vstack",
+          "rank": 19,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Beam-501B",
+          "rank": 20,
+          "count": 2,
+          "sources": [
+            "x"
+          ]
+        }
+      ],
+      "top_keywords": [
+        {
+          "word": "Claude",
+          "rank": 1,
+          "count": 23,
+          "sources": [
+            "x",
+            "linkedin"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "LiteLLM",
+          "rank": 2,
+          "count": 15,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "ChatGPT",
+          "rank": 3,
+          "count": 11,
+          "sources": [
+            "x",
+            "linkedin"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "DeepEval",
+          "rank": 4,
+          "count": 10,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Mamba",
+          "rank": 5,
+          "count": 7,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Nemotron",
+          "rank": 6,
+          "count": 7,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Claude Code",
+          "rank": 7,
+          "count": 4,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Codex",
+          "rank": 8,
+          "count": 4,
+          "sources": [
+            "x",
+            "linkedin"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "GitHub",
+          "rank": 9,
+          "count": 4,
+          "sources": [
+            "linkedin"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "GPT",
+          "rank": 10,
+          "count": 4,
+          "sources": [
+            "linkedin"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Muse Ember",
+          "rank": 11,
+          "count": 4,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Opus 5.5",
+          "rank": 12,
+          "count": 4,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Bittensor",
+          "rank": 13,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Cowork",
+          "rank": 14,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Google AI Mode",
+          "rank": 15,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Perplexity",
+          "rank": 16,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "RWKV",
+          "rank": 17,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "veriserve",
+          "rank": 18,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "vstack",
+          "rank": 19,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Beam-501B",
+          "rank": 20,
+          "count": 2,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        }
+      ],
+      "summary": "이번 주 LLM 분야에서는 Claude(23회)가 가장 많이 언급됐고, LiteLLM(15회), ChatGPT(11회), DeepEval(10회)이 뒤를 이었습니다. Claude Code, Codex, GitHub, GPT도 상위 10위 안에 포함됐습니다."
+    },
+    {
+      "topic": "개발자도구",
+      "rising": [],
+      "up": [],
+      "down": [],
+      "new": [
+        {
+          "word": "Claude",
+          "rank": 1,
+          "count": 47,
+          "sources": [
+            "x",
+            "linkedin"
+          ]
+        },
+        {
+          "word": "Pi",
+          "rank": 2,
+          "count": 14,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Claude Code",
+          "rank": 3,
+          "count": 11,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "지피티",
+          "rank": 4,
+          "count": 11,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Concentrix Migration Engine",
+          "rank": 5,
+          "count": 8,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "GitHub",
+          "rank": 6,
+          "count": 7,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Exa",
+          "rank": 7,
+          "count": 6,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Siri AI",
+          "rank": 8,
+          "count": 6,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "어사이드(Aside)",
+          "rank": 9,
+          "count": 5,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "클로드 화이트보드",
+          "rank": 10,
+          "count": 5,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "VS Code",
+          "rank": 11,
+          "count": 4,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "AWS Bedrock",
+          "rank": 12,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Cowork",
+          "rank": 13,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Foundry",
+          "rank": 14,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Hardhat",
+          "rank": 15,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "SourcifyEth",
+          "rank": 16,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Vertex AI",
+          "rank": 17,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "딥시크",
+          "rank": 18,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "제미나",
+          "rank": 19,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Agent Builder",
+          "rank": 20,
+          "count": 2,
+          "sources": [
+            "x"
+          ]
+        }
+      ],
+      "top_keywords": [
+        {
+          "word": "Claude",
+          "rank": 1,
+          "count": 47,
+          "sources": [
+            "x",
+            "linkedin"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Pi",
+          "rank": 2,
+          "count": 14,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Claude Code",
+          "rank": 3,
+          "count": 11,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "지피티",
+          "rank": 4,
+          "count": 11,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Concentrix Migration Engine",
+          "rank": 5,
+          "count": 8,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "GitHub",
+          "rank": 6,
+          "count": 7,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Exa",
+          "rank": 7,
+          "count": 6,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Siri AI",
+          "rank": 8,
+          "count": 6,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "어사이드(Aside)",
+          "rank": 9,
+          "count": 5,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "클로드 화이트보드",
+          "rank": 10,
+          "count": 5,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "VS Code",
+          "rank": 11,
+          "count": 4,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "AWS Bedrock",
+          "rank": 12,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Cowork",
+          "rank": 13,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Foundry",
+          "rank": 14,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Hardhat",
+          "rank": 15,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "SourcifyEth",
+          "rank": 16,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Vertex AI",
+          "rank": 17,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "딥시크",
+          "rank": 18,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "제미나",
+          "rank": 19,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Agent Builder",
+          "rank": 20,
+          "count": 2,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        }
+      ],
+      "summary": "이번 주 개발자도구 분야에서는 Claude(47회)가 압도적으로 많이 언급됐고, Pi(14회), Claude Code(11회), 지피티(11회), GitHub(7회)가 뒤를 이었습니다."
+    },
+    {
+      "topic": "테크",
+      "rising": [],
+      "up": [],
+      "down": [],
+      "new": [
+        {
+          "word": "Grok",
+          "rank": 1,
+          "count": 8,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Claude",
+          "rank": 2,
+          "count": 7,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Imagine Enterprise",
+          "rank": 3,
+          "count": 6,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Intangible",
+          "rank": 4,
+          "count": 6,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "MCP",
+          "rank": 5,
+          "count": 6,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Siri",
+          "rank": 6,
+          "count": 6,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Vork",
+          "rank": 7,
+          "count": 6,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "ChatGPT",
+          "rank": 8,
+          "count": 5,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Tabletop",
+          "rank": 9,
+          "count": 5,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "어사이드(Aside)",
+          "rank": 10,
+          "count": 5,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Codex",
+          "rank": 11,
+          "count": 4,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "DeepSeek",
+          "rank": 12,
+          "count": 4,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Muse",
+          "rank": 13,
+          "count": 4,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Apple Intelligence",
+          "rank": 14,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Claude Code",
+          "rank": 15,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Cursor",
+          "rank": 16,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "fal",
+          "rank": 17,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Gemini 4 Argon",
+          "rank": 18,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "Julius AI",
+          "rank": 19,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        },
+        {
+          "word": "OpenCode",
+          "rank": 20,
+          "count": 3,
+          "sources": [
+            "x"
+          ]
+        }
+      ],
+      "top_keywords": [
+        {
+          "word": "Grok",
+          "rank": 1,
+          "count": 8,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Claude",
+          "rank": 2,
+          "count": 7,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Imagine Enterprise",
+          "rank": 3,
+          "count": 6,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Intangible",
+          "rank": 4,
+          "count": 6,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "MCP",
+          "rank": 5,
+          "count": 6,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Siri",
+          "rank": 6,
+          "count": 6,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Vork",
+          "rank": 7,
+          "count": 6,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "ChatGPT",
+          "rank": 8,
+          "count": 5,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Tabletop",
+          "rank": 9,
+          "count": 5,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "어사이드(Aside)",
+          "rank": 10,
+          "count": 5,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Codex",
+          "rank": 11,
+          "count": 4,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "DeepSeek",
+          "rank": 12,
+          "count": 4,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Muse",
+          "rank": 13,
+          "count": 4,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Apple Intelligence",
+          "rank": 14,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Claude Code",
+          "rank": 15,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Cursor",
+          "rank": 16,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "fal",
+          "rank": 17,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Gemini 4 Argon",
+          "rank": 18,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "Julius AI",
+          "rank": 19,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        },
+        {
+          "word": "OpenCode",
+          "rank": 20,
+          "count": 3,
+          "sources": [
+            "x"
+          ],
+          "prev_rank": null,
+          "prev_count": null,
+          "rank_change": null,
+          "category": "new"
+        }
+      ],
+      "summary": "이번 주 테크 분야에서는 Grok(8회)과 Claude(7회)가 상위권을 차지했고, Imagine Enterprise, Intangible, MCP, Siri, Vork가 각각 6회씩 언급됐습니다."
+    }
+  ]
+}

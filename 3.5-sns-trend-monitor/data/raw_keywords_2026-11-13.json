@@ -1,0 +1,445 @@
+[
+  {
+    "topic": "AI",
+    "source": "x",
+    "keywords": [
+      {
+        "word": "Claude",
+        "count": 12
+      },
+      {
+        "word": "Gemini",
+        "count": 10
+      },
+      {
+        "word": "ChatGPT",
+        "count": 8
+      },
+      {
+        "word": "Muse Ember",
+        "count": 7
+      },
+      {
+        "word": "Astra",
+        "count": 6
+      },
+      {
+        "word": "CorelDRAW Go",
+        "count": 6
+      },
+      {
+        "word": "Intangible",
+        "count": 6
+      },
+      {
+        "word": "Fable 5.2",
+        "count": 5
+      },
+      {
+        "word": "Grok",
+        "count": 5
+      },
+      {
+        "word": "Rescale",
+        "count": 5
+      },
+      {
+        "word": "Argon",
+        "count": 4
+      },
+      {
+        "word": "Cisco Secure AI Factory",
+        "count": 4
+      },
+      {
+        "word": "DeepSeek",
+        "count": 4
+      },
+      {
+        "word": "Harbor",
+        "count": 4
+      },
+      {
+        "word": "LifeClaw MCP",
+        "count": 4
+      },
+      {
+        "word": "Mythos",
+        "count": 4
+      },
+      {
+        "word": "Seedance 2.5",
+        "count": 4
+      },
+      {
+        "word": "Creative Agent",
+        "count": 3
+      },
+      {
+        "word": "OpenEvidence",
+        "count": 3
+      },
+      {
+        "word": "Viktor",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "topic": "AI",
+    "source": "linkedin",
+    "keywords": [
+      {
+        "word": "Axonius AI Workforce",
+        "count": 2
+      },
+      {
+        "word": "ChatGPT",
+        "count": 2
+      },
+      {
+        "word": "MCP",
+        "count": 2
+      },
+      {
+        "word": "ServiceNow AI Platform",
+        "count": 2
+      },
+      {
+        "word": "claude",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "topic": "LLM",
+    "source": "x",
+    "keywords": [
+      {
+        "word": "LiteLLM",
+        "count": 15
+      },
+      {
+        "word": "Claude",
+        "count": 13
+      },
+      {
+        "word": "DeepEval",
+        "count": 10
+      },
+      {
+        "word": "ChatGPT",
+        "count": 9
+      },
+      {
+        "word": "Mamba",
+        "count": 7
+      },
+      {
+        "word": "Nemotron",
+        "count": 7
+      },
+      {
+        "word": "Claude Code",
+        "count": 4
+      },
+      {
+        "word": "Muse Ember",
+        "count": 4
+      },
+      {
+        "word": "Opus 5.5",
+        "count": 4
+      },
+      {
+        "word": "Bittensor",
+        "count": 3
+      },
+      {
+        "word": "Codex",
+        "count": 3
+      },
+      {
+        "word": "Cowork",
+        "count": 3
+      },
+      {
+        "word": "Google AI Mode",
+        "count": 3
+      },
+      {
+        "word": "Perplexity",
+        "count": 3
+      },
+      {
+        "word": "RWKV",
+        "count": 3
+      },
+      {
+        "word": "veriserve",
+        "count": 3
+      },
+      {
+        "word": "vstack",
+        "count": 3
+      },
+      {
+        "word": "Beam-501B",
+        "count": 2
+      },
+      {
+        "word": "ChatGPT Health",
+        "count": 2
+      },
+      {
+        "word": "ChronoLLM-16B",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "topic": "LLM",
+    "source": "linkedin",
+    "keywords": [
+      {
+        "word": "Claude",
+        "count": 10
+      },
+      {
+        "word": "GitHub",
+        "count": 4
+      },
+      {
+        "word": "GPT",
+        "count": 4
+      },
+      {
+        "word": "ChatGPT",
+        "count": 2
+      },
+      {
+        "word": "Gemini",
+        "count": 2
+      },
+      {
+        "word": "Codex",
+        "count": 1
+      },
+      {
+        "word": "Copilot",
+        "count": 1
+      },
+      {
+        "word": "GPT-4o",
+        "count": 1
+      },
+      {
+        "word": "Grok Bot",
+        "count": 1
+      },
+      {
+        "word": "MCP",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "topic": "개발자도구",
+    "source": "x",
+    "keywords": [
+      {
+        "word": "Claude",
+        "count": 45
+      },
+      {
+        "word": "Pi",
+        "count": 14
+      },
+      {
+        "word": "Claude Code",
+        "count": 11
+      },
+      {
+        "word": "지피티",
+        "count": 11
+      },
+      {
+        "word": "Concentrix Migration Engine",
+        "count": 8
+      },
+      {
+        "word": "GitHub",
+        "count": 7
+      },
+      {
+        "word": "Exa",
+        "count": 6
+      },
+      {
+        "word": "Siri AI",
+        "count": 6
+      },
+      {
+        "word": "어사이드(Aside)",
+        "count": 5
+      },
+      {
+        "word": "클로드 화이트보드",
+        "count": 5
+      },
+      {
+        "word": "VS Code",
+        "count": 4
+      },
+      {
+        "word": "AWS Bedrock",
+        "count": 3
+      },
+      {
+        "word": "Cowork",
+        "count": 3
+      },
+      {
+        "word": "Foundry",
+        "count": 3
+      },
+      {
+        "word": "Hardhat",
+        "count": 3
+      },
+      {
+        "word": "SourcifyEth",
+        "count": 3
+      },
+      {
+        "word": "Vertex AI",
+        "count": 3
+      },
+      {
+        "word": "딥시크",
+        "count": 3
+      },
+      {
+        "word": "제미나",
+        "count": 3
+      },
+      {
+        "word": "Agent Builder",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "topic": "개발자도구",
+    "source": "linkedin",
+    "keywords": [
+      {
+        "word": "Claude",
+        "count": 2
+      },
+      {
+        "word": "Electron",
+        "count": 2
+      },
+      {
+        "word": "Playwright",
+        "count": 2
+      },
+      {
+        "word": "엑토리",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "topic": "테크",
+    "source": "x",
+    "keywords": [
+      {
+        "word": "Grok",
+        "count": 8
+      },
+      {
+        "word": "Claude",
+        "count": 7
+      },
+      {
+        "word": "Imagine Enterprise",
+        "count": 6
+      },
+      {
+        "word": "Intangible",
+        "count": 6
+      },
+      {
+        "word": "MCP",
+        "count": 6
+      },
+      {
+        "word": "Siri",
+        "count": 6
+      },
+      {
+        "word": "Vork",
+        "count": 6
+      },
+      {
+        "word": "ChatGPT",
+        "count": 5
+      },
+      {
+        "word": "Tabletop",
+        "count": 5
+      },
+      {
+        "word": "어사이드(Aside)",
+        "count": 5
+      },
+      {
+        "word": "Codex",
+        "count": 4
+      },
+      {
+        "word": "DeepSeek",
+        "count": 4
+      },
+      {
+        "word": "Muse",
+        "count": 4
+      },
+      {
+        "word": "Apple Intelligence",
+        "count": 3
+      },
+      {
+        "word": "Claude Code",
+        "count": 3
+      },
+      {
+        "word": "Cursor",
+        "count": 3
+      },
+      {
+        "word": "fal",
+        "count": 3
+      },
+      {
+        "word": "Gemini 4 Argon",
+        "count": 3
+      },
+      {
+        "word": "Julius AI",
+        "count": 3
+      },
+      {
+        "word": "OpenCode",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "topic": "테크",
+    "source": "linkedin",
+    "keywords": []
+  }
+]

@@ -1,0 +1,23 @@
+[SNS 트렌드 요약] 2026-11-13
+-------------------------------
+🤖 AI
+급상승 : 첫 수집이라 비교 없음 · TOP Claude(13회) / ChatGPT(10회)
+신규진입 : Claude, ChatGPT, Gemini
+이번 주 AI 분야에서는 Claude(13회), ChatGPT(10회), Gemini(10회)가 상위권을 차지했고, Muse Ember, Astra, CorelDRAW Go, Intangible 등의 키워드도 함께 언급됐습니다.
+
+🧠 LLM
+급상승 : 첫 수집이라 비교 없음 · TOP Claude(23회) / LiteLLM(15회)
+신규진입 : Claude, LiteLLM, ChatGPT
+이번 주 LLM 분야에서는 Claude(23회)가 가장 많이 언급됐고, LiteLLM(15회), ChatGPT(11회), DeepEval(10회)이 뒤를 이었습니다. Claude Code, Codex, GitHub, GPT도 상위 10위 안에 포함됐습니다.
+
+🛠️ 개발자도구
+급상승 : 첫 수집이라 비교 없음 · TOP Claude(47회) / Pi(14회)
+신규진입 : Claude, Pi, Claude Code
+이번 주 개발자도구 분야에서는 Claude(47회)가 압도적으로 많이 언급됐고, Pi(14회), Claude Code(11회), 지피티(11회), GitHub(7회)가 뒤를 이었습니다.
+
+💻 테크
+급상승 : 첫 수집이라 비교 없음 · TOP Grok(8회) / Claude(7회)
+신규진입 : Grok, Claude, Imagine Enterprise
+이번 주 테크 분야에서는 Grok(8회)과 Claude(7회)가 상위권을 차지했고, Imagine Enterprise, Intangible, MCP, Siri, Vork가 각각 6회씩 언급됐습니다.
+
+전체 보고서는 이메일로 발송됩니다.

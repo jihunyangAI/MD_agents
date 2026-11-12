@@ -1,0 +1,8 @@
+.env
+logs/
+# 실제 구독자 메일 주소가 들어 있음 → trend_config.example.json만 커밋
+trend_config.json
+# 수집한 SNS 게시물 원문 (제3자 게시물 텍스트)
+data/raw_posts_*.json
+.playwright-mcp/
+__pycache__/

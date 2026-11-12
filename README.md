@@ -28,6 +28,7 @@
 - [3.2 news-stock-analyzer](#-32-news-stock-analyzer--뉴스-기반-주식-영향-분석)
 - [3.3 exchange-monitor](#-33-exchange-monitor--환율-모니터링--환전-타이밍-알림)
 - [3.4 realestate-monitor](#-34-realestate-monitor--부동산-미래-가치-평가--알림)
+- [3.5 sns-trend-monitor](#-35-sns-trend-monitor--sns-트렌드-키워드-주간-보고)
 - [보안 메모](#-보안-메모)
 
 ---
@@ -51,6 +52,7 @@
 | 3.2 | 📈 [`news-stock-analyzer`](3.2-news-stock-analyzer) | 해외 핫이슈 뉴스 TOP 5 → 강세/약세 종목 분석 → 리포트 → 텔레그램 | `commands/news-stock-workflow.md`, `daily_report.md` |
 | 3.3 | 💱 [`exchange-monitor`](3.3-exchange-monitor) | USD/JPY/EUR 원화 환율 매일 수집 → 목표가 도달·급변 시 텔레그램 환전 타이밍 알림 | `commands/exchange-workflow.md`, `rate_alert.py` |
 | 3.4 | 🏠 [`realestate-monitor`](3.4-realestate-monitor) | 아파트 실거래 수집 → 교통·학군·정책 분석 → 100점 미래 가치 점수 → 조건 충족 시 텔레그램 알림 | `commands/property-monitor.md`, `value_analyzer.py` |
+| 3.5 | 🔥 [`sns-trend-monitor`](3.5-sns-trend-monitor) | X·LinkedIn 게시물 수집 → Claude 기술 키워드 추출 → 전주 대비 급상승/상승/하락/신규 → HTML 이메일 + 텔레그램 주간 보고 | `commands/sns-trend-workflow.md`, `trend_report.html` |
 
 ## 🧱 폴더 구조 규칙
 
@@ -321,6 +323,46 @@ flowchart LR
 
 ---
 
+## 🔥 3.5 sns-trend-monitor — SNS 트렌드 키워드 주간 보고
+
+```mermaid
+flowchart LR
+    T[Tavily 검색 API<br/>site:x.com · site:linkedin.com/posts] --> K[keyword-collector]
+    NR[Nitter RSS<br/>X 실패 시] -.-> K
+    K -->|raw_keywords_날짜.json| A[trend-analyzer]
+    A -->|trend_report_날짜.json| R[report-composer]
+    R -->|trend_report.html<br/>telegram_summary.txt| N[notifier]
+    N --> M[📧 Gmail BCC]
+    N --> TG[📱 텔레그램]
+```
+
+| 에이전트 | 실행 | 하는 일 |
+|----------|------|---------|
+| `keyword-collector` | `scripts/keyword_collector.py` | 분야(AI·LLM·개발자도구·테크)별 X 50건·LinkedIn 30건을 Tavily로 수집(유료 X API 미사용, 한국어 우선) → `claude -p`로 제품·모델·프레임워크·서비스명 추출 → 노이즈 제외 목록·별칭 통일 → 전체에서 1회만 나온 키워드 제외 |
+| `trend-analyzer` | `scripts/trend_analyzer.py` | 분야별 top20 순위를 지난주와 비교 → 급상승(3단계↑)/상승/하락/신규, Claude로 분야별·전체 흐름 요약. 첫 실행은 전부 신규 |
+| `report-composer` | `scripts/report_composer.py` | 인라인 CSS HTML 이메일(급상승 카드 · 변화표 · AI 분석) + 4000자 이하 텔레그램 요약 |
+| `notifier` | `scripts/notifier.py` | Gmail SMTP로 구독자 전원 BCC 발송, 이메일 결과와 무관하게 텔레그램 항상 발송, 실패 시 1회 재시도 · `--dry-run` 점검 |
+
+- 실행: Claude Code에서 **`지금 트렌드 분석해줘`** (또는 `/sns-trend-workflow`)
+- 자동 실행: `run.bat` (4단계 순차 실행, 12주 지난 로그 삭제). `run.bat test`는 저장된 원문으로 재추출하고 발송은 하지 않습니다.
+- 키워드 추출·요약은 설치된 Claude Code CLI(`claude -p --model haiku`)를 호출하므로 별도 LLM API 키가 필요 없습니다.
+- 지난주 파일은 7일 전 것을 우선 쓰고, 없으면 3~13일 전 중 가장 최근 파일과 비교합니다.
+
+<details>
+<summary><b>⚙️ 실행 준비</b></summary>
+
+1. `pip install requests feedparser python-dotenv`, Claude Code CLI 설치(`claude` 명령)
+2. `.env.example`을 `.env`로 복사하고 Tavily 키, Gmail 주소·앱 비밀번호, 텔레그램 토큰·chat_id를 채웁니다.
+3. `trend_config.example.json`을 `trend_config.json`으로 복사하고 `subscribers`에 수신 메일 주소를 넣습니다.
+4. 노이즈 키워드는 `trend_config.json`의 `analysis.noise_filter`(`exclude_keywords`, `exclude_patterns`, `aliases`)에 추가합니다.
+5. 작업 스케줄러 등록 (매주 월요일 18:00):
+   ```powershell
+   schtasks /create /tn SNSTrendMonitor-Weekly /tr '<폴더 경로>\run.bat' /sc weekly /d MON /st 18:00 /f
+   ```
+</details>
+
+---
+
 ## 🔒 보안 메모
 
 | 대상 | 처리 |
@@ -333,5 +375,6 @@ flowchart LR
 | 3.2 `logs/`(텔레그램 발송 로그 · 스케줄 로그) | `3.2-news-stock-analyzer/.gitignore`로 제외 |
 | 3.3 `exchange_config.json`(토큰), `exchange_history.json`, `alert_state.json`, `logs/` | `3.3-exchange-monitor/.gitignore`로 제외 — `exchange_config.example.json`만 커밋 |
 | 3.4 `alert_state.json`(발송 이력), `price_data.json`, `value_report.json`, `logs/` | `3.4-realestate-monitor/.gitignore`로 제외 — `*_score.json`은 공개 자료 기반 예시 결과 |
+| 3.5 `trend_config.json`(구독자 메일 주소), `data/raw_posts_*.json`(수집한 SNS 원문), `logs/` | `3.5-sns-trend-monitor/.gitignore`로 제외 — `trend_config.example.json`만 커밋, `data/`의 키워드·보고서는 예시 결과 |
 
 커밋된 `collected_*.json`, `analyzed_news.json`, `scraped_prices.json`, `prices.csv`, `price_chart.html`은 공개 뉴스·채용공고·쇼핑 가격으로 만든 **예시 결과**입니다.
