@@ -1,0 +1,8 @@
+commands/news-stock-workflow.md의 ① news-collector와 ② impact-analyzer 단계만 실행해줘.
+- 먼저 python으로 현재 날짜와 시각을 확인해 collected_at, date, analyzed_at에 쓴다(추측 금지).
+- ① agents/news-collector.md 규칙대로 오늘 날짜 기준 핫이슈 TOP 5를 웹검색으로 수집해 today_news.json에 덮어쓴다.
+- ② agents/impact-analyzer.md 규칙대로 today_news.json을 분석해 impact_analysis.json에 덮어쓴다. summary 개수와 market_summary(오늘의 한줄요약)를 반드시 채운다.
+- 모든 분석은 참고용이며 투자 권유 표현을 쓰지 않는다.
+- ③~⑤(report_printer.py, telegram_sender.py 실행, 리포트 열기)는 하지 마. 배치 파일이 따로 실행한다.
+- 확인 질문 없이 끝까지 진행해.
+- .env 파일은 읽지 마.

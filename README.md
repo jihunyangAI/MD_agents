@@ -25,6 +25,7 @@
 - [2.2 file-sender](#-22-file-sender--텔레그램으로-파일-요청)
 - [2.3 news-monitor](#-23-news-monitor--데일리-뉴스-브리핑)
 - [3.1 price-tracker](#-31-price-tracker--최저가-추적--알림)
+- [3.2 news-stock-analyzer](#-32-news-stock-analyzer--뉴스-기반-주식-영향-분석)
 - [보안 메모](#-보안-메모)
 
 ---
@@ -45,6 +46,7 @@
 | 2.2 | 📎 [`file-sender`](2.2-file-sender) | 텔레그램 "기획서 보내줘" → PC에서 파일 찾아 Gmail 첨부 발송 | `commands/file-transfer.md`, `check_once.bat` |
 | 2.3 | 📰 [`news-monitor`](2.3-news-monitor) | 키워드 뉴스 수집 → 영향도 분석 → 채용공고 → 매일 08:00 브리핑 | `workflows/news-workflow.md`, `newsletter_sender.py` |
 | 3.1 | 🛒 [`price-tracker`](3.1-price-tracker) | 관심 상품 최저가 수집 → 이력 기록 → 목표가 알림 → 추이 차트 | `commands/price-track-workflow.md`, `price_chart.html` |
+| 3.2 | 📈 [`news-stock-analyzer`](3.2-news-stock-analyzer) | 해외 핫이슈 뉴스 TOP 5 → 강세/약세 종목 분석 → 리포트 → 텔레그램 | `commands/news-stock-workflow.md`, `daily_report.md` |
 
 ## 🧱 폴더 구조 규칙
 
@@ -206,6 +208,43 @@ flowchart LR
 
 ---
 
+## 📈 3.2 news-stock-analyzer — 뉴스 기반 주식 영향 분석
+
+```mermaid
+flowchart LR
+    N[news-collector<br/>웹 검색] -->|today_news.json| I[impact-analyzer<br/>인과관계 분석]
+    I -->|impact_analysis.json| R[report-printer]
+    R -->|daily_report.md| T[telegram-sender]
+    T --> M[📱 텔레그램 리포트]
+```
+
+| 에이전트 | 실행 | 하는 일 |
+|----------|------|---------|
+| `news-collector` | Claude (웹 검색) | 해외(Reuters · Bloomberg · NBC · FT · WSJ) 우선, 국내(연합뉴스 · 한국경제) 보조로 지정학 · 경제정책 · 산업 · 기업 이슈 TOP 5 수집 |
+| `impact-analyzer` | Claude | 뉴스별 강세 🔺 / 약세 🔻 종목 · 섹터(대표 3종목, 국내 우선), 이유, 영향 강도(높음/보통/낮음). **"뉴스 → 경제 변수 → 기업 영향" 인과 경로가 약하면 ➖ 중립** |
+| `report-printer` | `report_printer.py` | 정해진 형식으로 콘솔 출력 + `daily_report.md` 저장, `logs/` 일별 백업(60일) |
+| `telegram-sender` | `telegram_sender.py` | 리포트를 텔레그램 형식으로 변환해 발송 (`requests`, 4000자 초과 시 분할, 1회 재시도, `--dry-run`) |
+
+- 실행: Claude Code에서 **`지금 뉴스 분석해줘`** 또는 **`/news-stock-workflow`**
+- 자동 실행: `run_schedule.bat` — ①②는 `claude -p`, ③④는 Python 스크립트. `check_fresh.py`가 오늘 날짜로 갱신됐는지 확인하고, 아니면 **예전 결과를 발송하지 않고 중단** (`--check`로 설정 점검)
+- 이 실습만 HTTP 호출에 **`requests`** 라이브러리를 씁니다 (책의 지시).
+
+> [!WARNING]
+> 모든 분석은 **참고용이며 투자 권유가 아닙니다.** 커밋된 `today_news.json`, `impact_analysis.json`, `daily_report.md`는 2026-11-12 공개 뉴스로 만든 예시 결과입니다.
+
+<details>
+<summary><b>⚙️ 실행 준비</b></summary>
+
+1. `3.2-news-stock-analyzer/.env.example`을 `.env`로 복사하고 `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`를 채웁니다.
+2. 발송 미리보기: `python telegram_sender.py --dry-run`
+3. 작업 스케줄러 등록 (예: 평일 17:00):
+   ```powershell
+   schtasks /create /tn NewsStockAnalyzer-Evening /tr '<폴더 경로>\run_schedule.bat' /sc weekly /d MON,TUE,WED,THU,FRI /st 17:00 /f
+   ```
+</details>
+
+---
+
 ## 🔒 보안 메모
 
 | 대상 | 처리 |
@@ -215,5 +254,6 @@ flowchart LR
 | 2.2 `sender_config.json`(개인 메일 주소), `logs/` | `2.2-file-sender/.gitignore`로 제외 |
 | 2.3 `newsletter_log.json`, `logs/`, `cache/` | `2.3-news-monitor/.gitignore`로 제외 |
 | 3.1 `alert_history.json`(텔레그램 발송 이력), `logs/` | `3.1-price-tracker/.gitignore`로 제외 |
+| 3.2 `logs/`(텔레그램 발송 로그 · 스케줄 로그) | `3.2-news-stock-analyzer/.gitignore`로 제외 |
 
 커밋된 `collected_*.json`, `analyzed_news.json`, `scraped_prices.json`, `prices.csv`, `price_chart.html`은 공개 뉴스·채용공고·쇼핑 가격으로 만든 **예시 결과**입니다.
